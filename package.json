@@ -34,7 +34,8 @@
   },
   "workspaces": [
     "packages/tansolid",
-    "packages/__tests__/project1"
+    "packages/__tests__/project1",
+    "packages/__tests__/implementation"
   ],
   "type": "module",
   "scripts": {
@@ -103,5 +104,5 @@
   "engines": {
     "node": ">=24"
   },
-  "packageManager": "pnpm@11.5.2"
+  "packageManager": "pnpm@11.7.0"
 }

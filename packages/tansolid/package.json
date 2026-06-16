@@ -151,7 +151,7 @@
     "upgrade": "pnpm upgrade --latest"
   },
   "dependencies": {
-    "@bemedev/codebase": "^0.3.0",
+    "@bemedev/codebase": "^1.0.0",
     "@bemedev/pipe": "^1.6.1",
     "clsx": "^2.1.1",
     "cmd-ts": "^0.15.0",

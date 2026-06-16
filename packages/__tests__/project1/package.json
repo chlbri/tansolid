@@ -37,7 +37,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "color": "^5.0.3",
-    "lucide-solid": "^1.18.0",
+    "lucide-solid": "^1.20.0",
     "nitro": "3.0.260610-beta",
     "redaxios": "^0.5.1",
     "solid-js": "^1.9.13",

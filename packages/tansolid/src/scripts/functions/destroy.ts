@@ -1,8 +1,8 @@
 import { config } from '#config';
-import { getFolderPath } from '@bemedev/codebase/lib/helpers.js';
 import edit, { type JsonEditor } from 'edit-json-file';
 import { rmSync } from 'node:fs';
 import { join } from 'node:path';
+import { getFolderPath } from '../helpers';
 
 /**
  * Supprime un fichier JSON ou un dossier de façon récursive.

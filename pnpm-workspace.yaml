@@ -1,6 +1,7 @@
 packages:
   - "packages/tansolid"
   - "packages/__tests__/project1"
+  - "packages/__tests__/implementation"
 
 allowBuilds:
   '@parcel/watcher': true
@@ -12,3 +13,4 @@ minimumReleaseAge: 300
 
 minimumReleaseAgeExclude:
   - "@bemedev/dev-utils@0.8.0"
+  - '@bemedev/codebase@1.0.0'

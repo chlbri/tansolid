@@ -7,7 +7,14 @@ export const init = (options: Partial<InitOptions> = {}) => {
   const { root = DEFAULT_ROOT, json = JSON_PATH } = options;
   const CODEBASE_ANALYSIS = getCodebase();
   localConfig.json = json;
-  _init(CODEBASE_ANALYSIS, { root, json });
+  localConfig.root = root;
+
+  _init(CODEBASE_ANALYSIS, {
+    root,
+    json,
+    path: '#tansolid/*',
+    bin: 'tansolid',
+  });
 
   return add({ files: ['constants', 'types.index'] });
 };
