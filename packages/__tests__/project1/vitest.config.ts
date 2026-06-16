@@ -1,74 +1,59 @@
-import { aliasTs, createAlias } from "@bemedev/dev-utils/vitest-alias";
-import { playwright } from "@vitest/browser-playwright";
-import solid from "vite-plugin-solid";
-import { defineConfig } from "vitest/config";
-import tsconfig from "./tsconfig.json";
+import { aliasTs } from '@bemedev/dev-utils/vitest-alias';
+import { exclude } from '@bemedev/dev-utils/vitest-exclude';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  plugins: [],
-  resolve: {
-    conditions: ["development", "browser"],
+  plugins: [
+    aliasTs(),
+    exclude({
+      ignoreCoverageFiles: [
+        '**/index.ts',
+        '**/types.ts',
+        '**/*.example.ts',
+        '**/*.types.ts',
+        '**/*.typegen.ts',
+        '**/*.fixtures.ts',
+        '**/fixtures/**',
+        '**/*.test-d.ts',
+        '**/*.machine.ts',
+        '**/experimental.ts',
+        '**/src/utils/nothing.ts',
+        '**/fixtures.ts',
+        '**/libs/bemedev/**/*',
+        '**/fixture.ts',
+        '**/*.fixture.ts',
+        '**/test.ts',
+        '**/src/cli/cli.ts',
+        '**/src/cli/core/helpers/**',
+        '**/__tests__/**',
+      ],
+    }),
+  ],
+  server: {
+    host: '0.0.0.0',
   },
   test: {
-    globals: true,
-    coverage: {
-      reportsDirectory: ".coverage",
-      provider: "istanbul",
-      enabled: true,
-    },
+    bail: 100,
+    maxConcurrency: 10,
+    allowOnly: true,
     passWithNoTests: true,
-
-    projects: [
-      {
-        plugins: [aliasTs(tsconfig as any)],
-        extends: true,
-
-        test: {
-          include: ["**/*.{spec,test}.ts"],
-          environment: "node",
-          name: "node-tests",
-        },
-      },
-      {
-        plugins: [solid() as any],
-        extends: true,
-
-        resolve: {
-          conditions: ["development", "browser"],
-        },
-
-        test: {
-          name: "integration",
-          include: ["**/*.{spec,test}.tsx"],
-          alias: createAlias(tsconfig as any),
-          browser: {
-            provider: playwright({}),
-            enabled: true,
-            headless: true,
-            instances: [
-              {
-                browser: "chromium",
-                bail: 15,
-              },
-            ],
-          },
-        },
-      },
-      {
-        plugins: [solid() as any],
-        extends: true,
-        test: {
-          name: "e2e",
-          include: ["**/*.e2e.{tsx,ts}"],
-          alias: createAlias(tsconfig as any),
-          browser: {
-            provider: playwright(),
-            enabled: true,
-            headless: true,
-            instances: [{ browser: "chromium" }, { browser: "webkit" }],
-          },
-        },
-      },
-    ],
+    slowTestThreshold: 3000,
+    environment: 'node',
+    env: {
+      NODE_ENV: 'test',
+    },
+    globals: true,
+    logHeapUsage: false,
+    setupFiles: ['./vitest.setup.ts'],
+    testTimeout: 30000,
+    typecheck: {
+      enabled: true,
+      ignoreSourceErrors: false,
+    },
+    coverage: {
+      enabled: true,
+      reportsDirectory: '.coverage',
+      provider: 'v8',
+    },
   },
 });
