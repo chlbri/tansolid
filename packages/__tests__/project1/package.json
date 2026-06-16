@@ -6,6 +6,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite dev",
+    "tansolid-init": "tansolid init",
+    "_ci": "pnpm i && pnpm run build && pnpm run test",
     "dev:host": "pnpm run dev --host",
     "preview": "pnpm run build && vite start",
     "start": "vite start",

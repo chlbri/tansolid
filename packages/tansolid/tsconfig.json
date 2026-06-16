@@ -6,6 +6,7 @@
     "declaration": true,
     "sourceMap": true,
     "outDir": "./lib",
+    "rootDir": "./src",
     "resolveJsonModule": true,
     "strict": true,
     "noImplicitReturns": true,
@@ -22,7 +23,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "noEmit": true,
     "declarationMap": true,
     "paths": {
       "#codebase": ["./.codebase.json"],
@@ -34,7 +34,9 @@
       "~cn-comp/*": ["./src/ui/cn/components/ui/*"],
       "~signals/*": ["./src/ui/signals/*"],
       "~directives/*": ["./src/ui/directives/*"],
-      "#directives": ["./src/ui/directives/index.ts"]
+      "#directives": ["./src/ui/directives/index.ts"],
+      "#config": ["./src/scripts/constants.ts"]
     }
-  }
+  },
+  "exclude": ["./vitest.config.ts", "./rolldown.config.ts", "./lib/**"]
 }

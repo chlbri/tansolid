@@ -1,4 +1,4 @@
-import { config } from '../constants';
+import { config } from '#config';
 import { getFolderPath } from '@bemedev/codebase/lib/helpers.js';
 import edit, { type JsonEditor } from 'edit-json-file';
 import { rmSync } from 'node:fs';

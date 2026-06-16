@@ -2,14 +2,11 @@
   "version": "1.0.0",
   "path": ".tansolid",
   "files": [
-    "constants.colors",
-    "constants.index",
-    "types.index",
-    "ui.constants.index",
-    "ui.constants.links",
-    "ui.constants.strings",
     "ui.molecules.Tooltip.constants",
     "ui.molecules.Tooltip.types",
-    "utils.types"
+    "utils.types",
+    "constants.colors",
+    "constants.index",
+    "types.index"
   ]
 }
