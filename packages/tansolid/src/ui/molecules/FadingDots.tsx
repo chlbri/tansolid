@@ -2,6 +2,11 @@ import { splitProps, type Component, JSX } from 'solid-js';
 import type { OmitPropsOf } from '../../types';
 import { cn } from '../cn/utils';
 
+/**
+ * FadingDots loader/indicator component displaying a set of animated fading dot indicators.
+ * @param props - Object containing dot count, animation duration, and styling props for the dots.
+ * @returns The rendered fading dots wrapper.
+ */
 export const FadingDots: Component<{
   count: number;
   duration?: number;

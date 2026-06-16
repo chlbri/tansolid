@@ -12,6 +12,10 @@ import {
   splitProps,
 } from 'solid-js';
 
+/**
+ * Accordion component for displaying collapsible content panels.
+ * Wrap item components like Accordion.Item, Accordion.Trigger, and Accordion.Content.
+ */
 export function Accordion<T extends ValidComponent = 'div'>(
   props: Parameters<typeof AccordionPrimitive<T>>[0],
 ) {
@@ -24,6 +28,9 @@ type accordionItemProps<T extends ValidComponent = 'div'> =
     class?: string;
   };
 
+/**
+ * Represents a single item container within the Accordion.
+ */
 const AccordionItem = <T extends ValidComponent = 'div'>(
   props: PolymorphicProps<T, accordionItemProps<T>>,
 ) => {
@@ -46,6 +53,9 @@ type accordionTriggerProps<T extends ValidComponent = 'button'> =
     }
   >;
 
+/**
+ * Trigger button to expand/collapse the Accordion item.
+ */
 const AccordionTrigger = <T extends ValidComponent = 'button'>(
   props: PolymorphicProps<T, accordionTriggerProps<T>>,
 ) => {
@@ -92,6 +102,9 @@ type accordionContentProps<T extends ValidComponent = 'div'> = ParentProps<
   }
 >;
 
+/**
+ * Collapsible content container within an Accordion item.
+ */
 const AccordionContent = <T extends ValidComponent = 'div'>(
   props: PolymorphicProps<T, accordionContentProps<T>>,
 ) => {

@@ -1,8 +1,8 @@
 {
   "STATS": {
-    "files": 63,
-    "imports": 80,
-    "exports": 500
+    "files": 51,
+    "imports": 42,
+    "exports": 474
   },
   "CODEBASE_ANALYSIS": {
     "constants.colors": {
@@ -73,90 +73,6 @@
       "text": "export {};\n",
       "exports": []
     },
-    "ui.cn.components.ui.accordion": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../utils",
-          "kind": "named",
-          "namedImports": ["cn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "@kobalte/core/accordion",
-          "kind": "named",
-          "namedImports": [
-            "AccordionContentProps",
-            "AccordionItemProps",
-            "AccordionTriggerProps"
-          ],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "@kobalte/core/accordion",
-          "kind": "named",
-          "namedImports": ["Accordion"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "@kobalte/core/polymorphic",
-          "kind": "named",
-          "namedImports": ["PolymorphicProps"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["ParentProps", "ValidComponent", "splitProps"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/cn/components/ui/accordion.tsx",
-      "text": "import { cn } from '../../utils';\nimport type { AccordionContentProps, AccordionItemProps, AccordionTriggerProps } from '@kobalte/core/accordion';\nimport { Accordion } from '@kobalte/core/accordion';\nimport type { PolymorphicProps } from '@kobalte/core/polymorphic';\nimport { ParentProps, ValidComponent, splitProps } from 'solid-js';\n\n/**\n * Accordion function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function Accordion<T extends ValidComponent = 'div'>(\n  props: Parameters<typeof AccordionPrimitive<T>>[0],\n) {\n  return <AccordionPrimitive {...props} />;\n}\n\n// #region Item\ntype accordionItemProps<T extends ValidComponent = 'div'> =\n  AccordionItemProps<T> & {\n    class?: string;\n  };\n\nconst AccordionItem = <T extends ValidComponent = 'div'>(\n  props: PolymorphicProps<T, accordionItemProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as accordionItemProps, ['class']);\n\n  return (\n    <AccordionPrimitive.Item\n      class={cn('border-b', local.class)}\n      {...rest}\n    />\n  );\n};\n// #endregion\n\n// #region Trigger\ntype accordionTriggerProps<T extends ValidComponent = 'button'> =\n  ParentProps<\n    AccordionTriggerProps<T> & {\n      class?: string;\n    }\n  >;\n\nconst AccordionTrigger = <T extends ValidComponent = 'button'>(\n  props: PolymorphicProps<T, accordionTriggerProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as accordionTriggerProps, [\n    'class',\n    'children',\n  ]);\n\n  return (\n    <AccordionPrimitive.Header class='flex' as='div'>\n      <AccordionPrimitive.Trigger\n        class={cn(\n          'flex flex-1 items-center justify-between py-4 text-sm font-medium transition-shadow hover:underline focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring [&[data-expanded]>svg]:rotate-180',\n          local.class,\n        )}\n        {...rest}\n      >\n        {local.children}\n        <svg\n          xmlns='http://www.w3.org/2000/svg'\n          viewBox='0 0 24 24'\n          class='h-4 w-4 text-muted-foreground transition-transform duration-200'\n        >\n          <path\n            fill='none'\n            stroke='currentColor'\n            stroke-linecap='round'\n            stroke-linejoin='round'\n            stroke-width='2'\n            d='m6 9l6 6l6-6'\n          />\n          <title>Arrow</title>\n        </svg>\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  );\n};\n// #endregion\n\n// #region Content\ntype accordionContentProps<T extends ValidComponent = 'div'> = ParentProps<\n  AccordionContentProps<T> & {\n    class?: string;\n  }\n>;\n\nconst AccordionContent = <T extends ValidComponent = 'div'>(\n  props: PolymorphicProps<T, accordionContentProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as accordionContentProps, [\n    'class',\n    'children',\n  ]);\n\n  return (\n    <AccordionPrimitive.Content\n      class={cn(\n        'animate-accordion-up overflow-hidden text-sm data-expanded:animate-accordion-down',\n        local.class,\n      )}\n      {...rest}\n    >\n      <div class='pb-4 pt-0'>{local.children}</div>\n    </AccordionPrimitive.Content>\n  );\n};\n// #endregion\n\nAccordion.Item = AccordionItem;\nAccordion.Trigger = AccordionTrigger;\nAccordion.Content = AccordionContent;\n\n    ",
-      "exports": []
-    },
-    "ui.cn.components.ui.radio-group": {
-      "imports": [
-        {
-          "moduleSpecifier": "../../utils",
-          "kind": "named",
-          "namedImports": ["cn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "@kobalte/core/polymorphic",
-          "kind": "named",
-          "namedImports": ["PolymorphicProps"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "@kobalte/core/radio-group",
-          "kind": "named",
-          "namedImports": ["RadioGroupItemControlProps"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "@kobalte/core/radio-group",
-          "kind": "named",
-          "namedImports": ["RadioGroup"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["ValidComponent", "VoidProps"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["splitProps"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/cn/components/ui/radio-group.tsx",
-      "text": "import { cn } from '../../utils';\nimport type { PolymorphicProps } from '@kobalte/core/polymorphic';\nimport type { RadioGroupItemControlProps } from '@kobalte/core/radio-group';\nimport { RadioGroup } from '@kobalte/core/radio-group';\nimport type { ValidComponent, VoidProps } from 'solid-js';\nimport { splitProps } from 'solid-js';\n\n/**\n * RadioGroupDescription variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupDescription = RadioGroupPrimitive.Description;\n/**\n * RadioGroupErrorMessage variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupErrorMessage = RadioGroupPrimitive.ErrorMessage;\n/**\n * RadioGroupItemDescription variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemDescription =\n  RadioGroupPrimitive.ItemDescription;\n/**\n * RadioGroupItemInput variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemInput = RadioGroupPrimitive.ItemInput;\n/**\n * RadioGroupItemLabel variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemLabel = RadioGroupPrimitive.ItemLabel;\n/**\n * RadioGroupLabel variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupLabel = RadioGroupPrimitive.Label;\n/**\n * RadioGroup variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroup = RadioGroupPrimitive;\n/**\n * RadioGroupItem variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItem = RadioGroupPrimitive.Item;\n\ntype radioGroupItemControlProps<T extends ValidComponent = 'div'> =\n  VoidProps<RadioGroupItemControlProps<T> & { class?: string }>;\n\n/**\n * RadioGroupItemControl variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemControl = <T extends ValidComponent = 'div'>(\n  props: PolymorphicProps<T, radioGroupItemControlProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as radioGroupItemControlProps, [\n    'class',\n  ]);\n\n  return (\n    <RadioGroupPrimitive.ItemControl\n      class={cn(\n        'flex aspect-square h-4 w-4 items-center justify-center rounded-full border border-primary text-primary shadow transition-shadow focus:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-gray-300',\n        local.class,\n      )}\n      {...rest}\n    >\n      <RadioGroupPrimitive.ItemIndicator class='h-2 w-2 rounded-full data-checked:bg-gray-50' />\n    </RadioGroupPrimitive.ItemControl>\n  );\n};\n\n    ",
-      "exports": []
-    },
     "ui.cn.utils": {
       "imports": [
         {
@@ -173,7 +89,7 @@
         }
       ],
       "relativePath": "ui/cn/utils.ts",
-      "text": "import { clsx, ClassValue } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\n/**\n * cn function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n\n    ",
+      "text": "import { clsx, ClassValue } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\n/**\n * Merges Tailwind classes and resolves conflicts safely.\n * @param inputs - Array of class names or class condition maps.\n * @returns The combined and resolved class string.\n */\n/**\n * cn function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n\n    ",
       "exports": []
     },
     "ui.constants.index": {
@@ -432,88 +348,6 @@
         }
       ]
     },
-    "ui.molecules.AccordionQA": {
-      "imports": [
-        {
-          "moduleSpecifier": "../cn/components/ui/accordion",
-          "kind": "named",
-          "namedImports": ["Accordion"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["For", "Accessor", "Component"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/molecules/AccordionQA.tsx",
-      "text": "import { Accordion } from '../cn/components/ui/accordion';\nimport { For, Accessor, Component } from 'solid-js';\n\n/**\n * Data structure representing a question-answer pair in the accordion list.\n */\n/**\n * AccordionData type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type AccordionData = { question: string; answer: string };\n\n/**\n * Internal single Accordion Item component.\n */\nconst Item: Component<AccordionData & { index: Accessor<number> }> = ({\n  question,\n  answer,\n  index,\n}) => {\n  return (\n    <AccordionD.Item value={`Item - ${index()}`}>\n      <AccordionD.Trigger class='cursor-pointer' children={question} />\n      <AccordionD.Content class='cursor-pointer' children={answer} />\n    </AccordionD.Item>\n  );\n};\n\n/**\n * AccordionQA component displaying a list of collapsible questions and answers.\n * @param props - Object containing data list of question-answer pairs.\n * @returns The rendered Accordion component.\n */\n/**\n * AccordionQA variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const AccordionQA: Component<{ data: AccordionData[] }> = ({\n  data,\n}) => {\n  return (\n    <AccordionD collapsible class='mx-auto min-w-md'>\n      <For\n        each={data}\n        children={(data, index) => {\n          const props = { ...data, index };\n          return <Item {...props} />;\n        }}\n      />\n    </AccordionD>\n  );\n};\n\n    ",
-      "exports": []
-    },
-    "ui.molecules.Counter": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["Accessor", "Component"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "ui/molecules/Counter.tsx",
-      "text": "import type { Accessor, Component } from 'solid-js';\n\n/**\n * Simple button-based Counter component displaying a label and click count.\n * @param props - Object containing onClick callback, count accessor, and display label.\n * @returns The rendered JSX button element.\n */\n/**\n * Counter variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const Counter: Component<{\n  onClick: () => void;\n  count: Accessor<number>;\n  label: string;\n}> = ({ onClick, label, count }) => {\n  return (\n    <button\n      class='px-5 py-3 bg-blue-200 text-blue-800 rounded-2xl border-2 border-gray-900 outline-none cursor-pointer focus:border-blue-600 active:bg-gray-200'\n      onClick={onClick}\n      type='button'\n    >\n      {`${label}${count()}`}\n    </button>\n  );\n};\n\n    ",
-      "exports": []
-    },
-    "ui.molecules.FadingDots": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["splitProps", "Component", "JSX"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../../types",
-          "kind": "named",
-          "namedImports": ["OmitPropsOf"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../cn/utils",
-          "kind": "named",
-          "namedImports": ["cn"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/molecules/FadingDots.tsx",
-      "text": "import { splitProps, Component, JSX } from 'solid-js';\nimport type { OmitPropsOf } from '../../types';\nimport { cn } from '../cn/utils';\n\n/**\n * FadingDots variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const FadingDots: Component<{\n  count: number;\n  duration?: number;\n  innerProps?: OmitPropsOf<'span', 'children' | 'style'> & {\n    style?: JSX.CSSProperties;\n  };\n}> = ({ count: length, innerProps = {}, duration = 500 }) => {\n  const [local, rest] = splitProps(innerProps, ['class', 'style']);\n\n  return (\n    <div class='flex items-center justify-center space-x-4 mt-4'>\n      {Array.from({ length }, (_, i) => (\n        <span\n          class={cn(\n            'rounded-full animate-out direction-alternate repeat-infinite fade-out-5 size-4  bg-gray-600',\n            local.class,\n          )}\n          style={{\n            ...local.style,\n            'animation-duration': `${duration}ms`,\n            'animation-delay': `${duration / i}ms`,\n          }}\n          aria-hidden='true'\n          {...rest}\n        />\n      ))}\n    </div>\n  );\n};\n\n    ",
-      "exports": []
-    },
-    "ui.molecules.MultiText": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["splitProps"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../../types",
-          "kind": "named",
-          "namedImports": ["OmitPropsOf"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../cn/utils",
-          "kind": "named",
-          "namedImports": ["cn"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/molecules/MultiText.tsx",
-      "text": "import { splitProps } from 'solid-js';\nimport type { OmitPropsOf } from '../../types';\nimport { cn } from '../cn/utils';\n\n/**\n * Properties for the MultiText component.\n */\ntype Props<T extends string[]> = {\n  /** Array of text snippets to display inside individual span tags. */\n  texts: T;\n  /** Custom options/props for each individual text span index. */\n  props?: {\n    [K in Extract<keyof T, `${number}`>]?: OmitPropsOf<'span', 'children'>;\n  };\n} & OmitPropsOf<'span', 'children'>;\n\n/**\n * Renders multiple inline span elements sequentially, wrapping them in a single parent span.\n * @param props - Configuration properties containing the texts, inner span properties, and outer span wrapper styling.\n * @returns The rendered JSX element.\n */\n/**\n * MultiText variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const MultiText = <const T extends string[]>({\n  texts,\n  props: _props,\n  ...rest\n}: Props<T>) => {\n  const [local, all] = splitProps(rest, ['class']);\n\n  return (\n    <span {...all} class={cn('inline!', local.class)}>\n      {texts.map((text, index) => {\n        const props = { ...(_props as any)?.[index] };\n        return <span {...props}>{text}</span>;\n      })}\n    </span>\n  );\n};\n\n    ",
-      "exports": []
-    },
     "ui.molecules.Tooltip.constants": {
       "imports": [],
       "relativePath": "ui/molecules/Tooltip.constants.ts",
@@ -570,37 +404,6 @@
       "text": "import { createMemo, createSignal, splitProps } from 'solid-js';\nimport type { ToolTipProps } from './Tooltip.types';\nimport { undefinedCall } from '../helpers';\nimport type { PropsOf } from '../../types';\nimport { getPositionClass } from './Tooltip.helpers';\n\ntype PropsHandlers = PropsOf<\n  'div',\n  'onMouseOver' | 'onMouseOut' | 'onFocus' | 'onBlur'\n>;\n\ntype ExtractFn<T extends keyof PropsHandlers> = (\n  e: Parameters<Extract<PropsHandlers[T], (...args: any) => any>>[0],\n) => any;\n\n/**\n * Custom hook managing the visibility, timing, positioning, and event handlers for the Tooltip component.\n * @param props - Tooltip properties like show/hide delay and positioning preference.\n * @returns State accessors, computed styles, ref setters, and event handlers.\n */\n/**\n * useHook variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const useHook = (\n  props: Omit<ToolTipProps, 'children' | 'tooltip'>,\n) => {\n  let timeoutShow: ReturnType<typeof setTimeout>;\n  let timeoutHide: ReturnType<typeof setTimeout>;\n  const [containerRef, setContainerRef] = createSignal<HTMLDivElement>();\n\n  const [isVisible, setIsVisible] = createSignal(false);\n  const [computedPosition, setComputedPosition] = createSignal<\n    'top' | 'bottom'\n  >('top');\n\n  const position = props.position || 'viewport-relative';\n\n  const showTooltip = () => {\n    if (timeoutHide) clearTimeout(timeoutHide);\n    const container = containerRef();\n\n    // Calculate position for viewport-relative\n    if (position === 'viewport-relative' && container) {\n      const rect = container.getBoundingClientRect();\n      const viewportHeight = window.innerHeight;\n      const spaceAbove = rect.top;\n      const spaceBelow = viewportHeight - rect.bottom;\n\n      // Default to top, but switch to bottom if not enough space above\n      setComputedPosition(\n        spaceAbove < 100 && spaceBelow > spaceAbove ? 'bottom' : 'top',\n      );\n    }\n\n    timeoutShow = setTimeout(() => {\n      setIsVisible(true);\n    }, props.showDelay ?? 500);\n  };\n\n  const hideTooltip = () => {\n    if (timeoutShow) clearTimeout(timeoutShow);\n    timeoutHide = setTimeout(() => {\n      setIsVisible(false);\n    }, props.hideDelay ?? 200);\n  };\n\n  const [_handlers, local] = splitProps(props, [\n    'onMouseOver',\n    'onMouseOut',\n    'onFocus',\n    'onBlur',\n  ]);\n\n  const onMouseOver: ExtractFn<'onMouseOver'> = e => {\n    showTooltip();\n    return undefinedCall(_handlers.onMouseOver, e);\n  };\n\n  const onMouseOut: ExtractFn<'onMouseOut'> = e => {\n    hideTooltip();\n    return undefinedCall(_handlers.onMouseOut, e);\n  };\n\n  const onFocus: ExtractFn<'onFocus'> = e => {\n    showTooltip();\n    return undefinedCall(_handlers.onFocus, e);\n  };\n\n  const onBlur: ExtractFn<'onBlur'> = e => {\n    hideTooltip();\n    return undefinedCall(_handlers.onBlur, e);\n  };\n\n  const positionClass = createMemo(() =>\n    getPositionClass(position, computedPosition()),\n  );\n\n  const handlers = {\n    onMouseOver,\n    onMouseOut,\n    onFocus,\n    onBlur,\n  };\n\n  return {\n    isVisible,\n    positionClass,\n    setContainerRef,\n    handlers,\n    local,\n  };\n};\n\n    ",
       "exports": []
     },
-    "ui.molecules.Tooltip": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["Component"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../cn/utils",
-          "kind": "named",
-          "namedImports": ["cn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./Tooltip.hook",
-          "kind": "named",
-          "namedImports": ["useHook"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "./Tooltip.types",
-          "kind": "named",
-          "namedImports": ["ToolTipProps"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "ui/molecules/Tooltip.tsx",
-      "text": "import { Component } from 'solid-js';\nimport { cn } from '../cn/utils';\nimport { useHook } from './Tooltip.hook';\nimport type { ToolTipProps } from './Tooltip.types';\n\n/**\n * ToolTip component that displays a tooltip overlay on hover, focus, or custom interaction.\n * @param props - Tooltip properties including tooltip content, placement preference, and trigger delays.\n * @returns The rendered tooltipped component container.\n */\n/**\n * ToolTip variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const ToolTip: Component<ToolTipProps> = props => {\n  const { isVisible, positionClass, setContainerRef, handlers, local } =\n    useHook(props);\n\n  return (\n    <div\n      {...local}\n      ref={setContainerRef}\n      class={cn('relative', local.class)}\n      {...handlers}\n    >\n      {props.children}\n      <div\n        class={cn(\n          'absolute z-50 px-2 py-1 text-sm text-white bg-black rounded-md shadow-lg whitespace-nowrap transition-opacity duration-200',\n          positionClass(),\n          isVisible()\n            ? 'opacity-100 pointer-events-auto'\n            : 'opacity-0 pointer-events-none',\n        )}\n      >\n        {props.tooltip}\n      </div>\n    </div>\n  );\n};\n\n    ",
-      "exports": []
-    },
     "ui.molecules.Tooltip.types": {
       "imports": [
         {
@@ -624,56 +427,6 @@
       ],
       "relativePath": "ui/molecules/Tooltip.types.ts",
       "text": "import type { JSX } from 'solid-js';\nimport type { POSITIONS } from './Tooltip.constants';\nimport type { OmitPropsOf } from '../../types';\n\n/**\n * Allowed positions for the tooltip relative to the target element.\n */\n/**\n * Position type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Position = (typeof POSITIONS)[number];\n\n/**\n * Properties for the Tooltip component.\n */\n/**\n * ToolTipProps type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ToolTipProps = {\n  /** The content of the tooltip (JSX element or string). */\n  tooltip: JSX.Element;\n  /** Delay in milliseconds before showing the tooltip. */\n  showDelay?: number;\n  /** Delay in milliseconds before hiding the tooltip. */\n  hideDelay?: number;\n  /** The tooltip placement relative to the element. Defaults to 'top'. */\n  position?: Position;\n} & OmitPropsOf<'div'>;\n\n    ",
-      "exports": []
-    },
-    "ui.molecules.TypingText": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": [
-            "createEffect",
-            "createMemo",
-            "on",
-            "Accessor",
-            "Component"
-          ],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../signals/createTyping",
-          "kind": "named",
-          "namedImports": ["createTyping"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../constants",
-          "kind": "named",
-          "namedImports": ["VISIBLE_ESPACE"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/molecules/TypingText.tsx",
-      "text": "import { createEffect, createMemo, on, Accessor, Component } from 'solid-js';\nimport { createTyping } from '../signals/createTyping';\nimport { VISIBLE_ESPACE } from '../constants';\n\ntype BaseProps = {\n  children: string;\n  class?: string;\n  interval?: number;\n  disabled?: Accessor<boolean>;\n};\n\ntype Props = BaseProps &\n  (\n    | {\n        rewind: true;\n        rewindDelay: number;\n      }\n    | { rewind?: false }\n  );\n\n/**\n * TypingText variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const TypingText: Component<Props> = props => {\n  // #region Default values\n  const min = props.interval ?? 62;\n  const rewind = props.rewind ?? false;\n  const rewindDelay = (props as any).rewindDelay ?? 500;\n  const content = props.children;\n  const disabled = createMemo(\n    () => (props.disabled ? props.disabled() : false),\n    false,\n  );\n  // #endregion\n\n  const { text, type, setText } = createTyping({\n    content,\n    min,\n    rewind,\n    rewindDelay,\n  });\n\n  createEffect(on(disabled, () => setText(VISIBLE_ESPACE)));\n\n  createEffect(() => {\n    // If disabled, show full text immediately\n    if (disabled()) setText(content);\n    else type();\n  });\n\n  return <div class={props.class}>{text()}</div>;\n};\n\n    ",
-      "exports": []
-    },
-    "ui.molecules.focus": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": [
-            "createSignal",
-            "onMount",
-            "Component",
-            "ComponentProps",
-            "ValidComponent"
-          ],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/molecules/focus.tsx",
-      "text": "import { createSignal, onMount, Component, ComponentProps, ValidComponent } from 'solid-js';\n\n/**\n * Callback function to check if the component should acquire focus.\n * @template T - The type of valid component.\n * @param props - The props of the component.\n * @returns Boolean indicating if focus should be set.\n */\ntype FocusFn<T extends ValidComponent> = (\n  props: ComponentProps<T>,\n) => boolean;\n\nfunction _focus<T extends Component<any>>(children: T, focus: FocusFn<T>) {\n  const Out = (props => {\n    const [ref, setRef] = createSignal<HTMLElement | null>(null);\n\n    onMount(() => {\n      if (focus(props)) ref()?.focus();\n    });\n\n    const Compt = children;\n\n    return <Compt {...props} ref={setRef} />;\n  }) as T;\n\n  return Out;\n}\n\nfunction _forwardFocus<T2 extends ValidComponent>(focus: FocusFn<T2>) {\n  return <T extends ComponentProps<T2>>(Compt: Component<T>) =>\n    _focus(Compt, focus as any);\n}\n\n/**\n * Creates a function that wraps a component to automatically focus it based on a condition.\n * @template T2 - The target component type.\n * @param focus - Function determining whether to focus the element.\n * @returns A HOC function wrapping the component.\n */\n/**\n * forwardFocus function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function forwardFocus<T2 extends ValidComponent>(\n  focus: FocusFn<T2>,\n): <T extends ComponentProps<T2>>(Compt: Component<T>) => Component<T>;\n\n/**\n * Wraps a component to automatically focus it when mounted based on a condition.\n * @template T2 - The target component type.\n * @param children - The component to wrap.\n * @param focus - Function determining whether to focus the element.\n * @returns The wrapped component.\n */\n/**\n * forwardFocus function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function forwardFocus<T2 extends Component<any>>(\n  children: T2,\n  focus: FocusFn<T2>,\n): T2;\n\n/**\n * Implementation of forwardFocus supporting both direct component wrapping and curried HOC options.\n */\n/**\n * forwardFocus function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function forwardFocus<T2 extends ValidComponent>(\n  arg1: any,\n  arg2?: FocusFn<T2>,\n) {\n  return arg2\n    ? _focus(arg1 as any, arg2)\n    : _forwardFocus(arg1 as FocusFn<T2>);\n}\n\n    ",
       "exports": []
     },
     "ui.molecules.index": {
@@ -747,69 +500,7 @@
         }
       ],
       "relativePath": "ui/molecules/reducer.ts",
-      "text": "import { Component, ComponentProps } from 'solid-js';\nimport type { RC } from '../../types';\n\n/**\n * reduceComponent variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const reduceComponent = <\n  const T extends Component<any>,\n  K extends Partial<ComponentProps<T>> = never,\n  Keys extends keyof ComponentProps<T> =\n    keyof K extends keyof ComponentProps<T> ? keyof K : never,\n>(\n  Compt: T,\n  props1?: K,\n) => {\n  const out: RC<T, Keys> = props2 => {\n    const props = { ...props1, ...props2 };\n    return Compt(props);\n  };\n\n  return out;\n};\n\n    ",
-      "exports": []
-    },
-    "ui.organisms.HeadLinks": {
-      "imports": [
-        {
-          "moduleSpecifier": "@tanstack/solid-router",
-          "kind": "named",
-          "namedImports": ["Link"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["For", "Component"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../signals/links",
-          "kind": "named",
-          "namedImports": ["createLinks", "formatLabel1"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../../types",
-          "kind": "named",
-          "namedImports": ["PropsOf"],
-          "isTypeOnly": true
-        }
-      ],
-      "relativePath": "ui/organisms/HeadLinks.tsx",
-      "text": "import { Link } from '@tanstack/solid-router';\nimport { For, Component } from 'solid-js';\nimport { createLinks, formatLabel1 } from '../signals/links';\nimport type { PropsOf } from '../../types';\n\ntype LinkProps = Omit<\n  ReturnType<typeof createLinks>[number],\n  'children' | 'search'\n> &\n  Partial<Pick<ReturnType<typeof createLinks>[number], 'search'>> &\n  PropsOf<typeof _Link, 'children'>;\n\nconst Link: Component<LinkProps> = ({\n  children,\n  to,\n  search = () => undefined,\n}) => {\n  return (\n    <_Link\n      to={to}\n      search={search()}\n      class={'text-gray-400 hover:underline hover:scale-105'}\n      activeProps={{\n        class:\n          'text-yellow-900 font-semibold hover:no-underline! hover:scale-100! cursor-default text-xl',\n      }}\n    >\n      {children}\n    </_Link>\n  );\n};\n\n/**\n * HeadLinks variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const HeadLinks: Component = () => {\n  const LINKS = createLinks({\n    filter: value => value === '/projects' || !value.includes('projects'),\n    formatLabel,\n  });\n\n  return (\n    <header class='p-2 flex gap-2 text-lg justify-center w-full space-x-2'>\n      <For each={LINKS} children={Link} />\n    </header>\n  );\n};\n\n    ",
-      "exports": []
-    },
-    "ui.organisms.LoadingFallback": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["Component"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../molecules/TypingText",
-          "kind": "named",
-          "namedImports": ["TypingText"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../cn/utils",
-          "kind": "named",
-          "namedImports": ["cn"],
-          "isTypeOnly": false
-        },
-        {
-          "moduleSpecifier": "../molecules/FadingDots",
-          "kind": "named",
-          "namedImports": ["FadingDots"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/organisms/LoadingFallback.tsx",
-      "text": "import type { Component } from 'solid-js';\nimport { TypingText } from '../molecules/TypingText';\nimport { cn } from '../cn/utils';\nimport { FadingDots } from '../molecules/FadingDots';\n\ninterface LoadingFallbackProps {\n  /**\n   * Texte à afficher pendant le chargement\n   * @default \"Chargement en cours...\"\n   */\n  message?: string;\n  /**\n   * Classes CSS supplémentaires\n   */\n  class?: string;\n  /**\n   * Taille du spinner\n   * @default \"lg\"\n   */\n  size?: 'sm' | 'md' | 'lg' | 'xl';\n}\n\n/**\n * LoadingFallback - Composant de fallback avec spinner et texte animé\n *\n * Affiche un spinner animé accompagné d'un texte avec effet de typing\n * pour améliorer l'expérience utilisateur pendant les chargements.\n *\n * @example\n * ```tsx\n * <Show when={data()} fallback={<LoadingFallback />}>\n *   <DataComponent data={data()!} />\n * </Show>\n * ```\n */\n/**\n * LoadingFallback variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const LoadingFallback: Component<LoadingFallbackProps> = props => {\n  const message = props.message ?? 'Chargement en cours...';\n\n  const spinnerSizes = {\n    sm: 'w-8 h-8',\n    md: 'w-12 h-12',\n    lg: 'w-16 h-16',\n    xl: 'w-24 h-24',\n  };\n\n  const size = props.size ?? 'lg';\n\n  return (\n    <div\n      class={cn(\n        'flex flex-col items-center justify-center gap-6',\n        'h-screen w-screen overflow-hidden p-4',\n        props.class,\n      )}\n      role='status'\n      aria-live='polite'\n      aria-label='Chargement en cours'\n    >\n      {/* Spinner animé */}\n      <div class='relative'>\n        {/* Cercle extérieur avec rotation */}\n        <div\n          class={cn(\n            spinnerSizes[size],\n            'rounded-full border-4 border-[#4B9CAD]/20',\n            'animate-spin',\n            'border-t-[#4B9CAD]',\n          )}\n          aria-hidden='true'\n        />\n\n        {/* Cercle intérieur pour effet de profondeur */}\n        <div\n          class={cn(\n            'absolute inset-2',\n            'rounded-full border-4 border-transparent',\n            'border-b-[#4B9CAD]/40',\n            'animate-spin',\n            'animation-duration-[1.5s]',\n            'direction-[reverse]',\n          )}\n          aria-hidden='true'\n        />\n      </div>\n\n      {/* Texte avec effet typing */}\n      <div class='text-center' aria-label={message}>\n        <TypingText\n          class='text-lg md:text-xl font-medium text-gray-700 dark:text-gray-300'\n          interval={80}\n          rewind={true}\n          rewindDelay={2000}\n        >\n          {message}\n        </TypingText>\n\n        {/* Points d'animation pour indiquer le chargement */}\n        <FadingDots\n          count={5}\n          innerProps={{\n            class: 'bg-[#3d8091]',\n          }}\n        />\n      </div>\n    </div>\n  );\n};\n\n    ",
+      "text": "import { Component, ComponentProps } from 'solid-js';\nimport type { RC } from '../../types';\n\n/**\n * Reduces a component by pre-applying a set of default properties.\n * @template T - The original component type.\n * @template K - The type of props to pre-apply.\n * @template Keys - The keys of the pre-applied props.\n * @param Compt - The component to reduce.\n * @param props1 - The default props to pre-apply.\n * @returns The reduced component with pre-applied props made optional.\n */\n/**\n * reduceComponent variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const reduceComponent = <\n  const T extends Component<any>,\n  K extends Partial<ComponentProps<T>> = never,\n  Keys extends keyof ComponentProps<T> =\n    keyof K extends keyof ComponentProps<T> ? keyof K : never,\n>(\n  Compt: T,\n  props1?: K,\n) => {\n  const out: RC<T, Keys> = props2 => {\n    const props = { ...props1, ...props2 };\n    return Compt(props);\n  };\n\n  return out;\n};\n\n    ",
       "exports": []
     },
     "ui.organisms.index": {
@@ -843,25 +534,6 @@
           "moduleSpecifier": "./ressource"
         }
       ]
-    },
-    "ui.providers.ressource": {
-      "imports": [
-        {
-          "moduleSpecifier": "solid-js",
-          "kind": "named",
-          "namedImports": ["ParentComponent"],
-          "isTypeOnly": true
-        },
-        {
-          "moduleSpecifier": "../signals",
-          "kind": "named",
-          "namedImports": ["createResourceContext", "ResourceContext"],
-          "isTypeOnly": false
-        }
-      ],
-      "relativePath": "ui/providers/ressource.tsx",
-      "text": "import type { ParentComponent } from 'solid-js';\nimport { createResourceContext, ResourceContext } from '../signals';\n\n/**\n * Provider component for resource context\n *\n * Wrap your application with this component to provide\n * resource management capabilities to all child components.\n *\n * @example\n * ```tsx\n * import { ResourceProvider } from '@bemedev/tansolid/signals';\n *\n * export default function Root() {\n *   return (\n *     <ResourceProvider>\n *       <Router />\n *     </ResourceProvider>\n *   );\n * }\n * ```\n */\n/**\n * RessourcesProvider variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RessourcesProvider: ParentComponent = props => {\n  const value = createResourceContext();\n\n  return (\n    <ResourceContext.Provider value={value}>\n      {props.children}\n    </ResourceContext.Provider>\n  );\n};\n\n    ",
-      "exports": []
     },
     "ui.signals.circular": {
       "imports": [

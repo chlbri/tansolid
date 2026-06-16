@@ -122,7 +122,7 @@
   },
   "scripts": {
     "build": "pnpm run rm:lib && pnpm run codegen && pnpm run rolldown",
-    "codegen": "tsx src/scripts/codegen.ts",
+    "codegen": "pnpm codebase -x \"./src/**/*.test-d.ts\" -x \"./src/scripts/**/*\"",
     "_ci": "pnpm run lint && pnpm run test",
     "ci": "CI_START=$(date +%s) && pnpm run config:off && pnpm run lint && pnpm run test && echo \"\\n✅ CI takes $(($(date +%s) - CI_START))s\\n\"",
     "ci:admin": "pnpm run rm && pnpm run upgrade && pnpm run ci",

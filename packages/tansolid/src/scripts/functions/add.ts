@@ -8,6 +8,7 @@ import {
   getFile,
 } from '../helpers';
 import type { CodebaseAnalysis, FileAnalysis } from '@bemedev/codebase';
+import { JSON_PATH } from '../constants';
 
 type NOmit<T, K extends keyof T> = Omit<T, K>;
 
@@ -93,7 +94,7 @@ export const add = (options: Options = {}) => {
   if (isEmpty) return console.warn('No files specified for addition.');
   try {
     const cwd = process.cwd();
-    const json = join(cwd, '.bemedev.json');
+    const json = join(cwd, JSON_PATH);
     let file: JsonEditor | undefined = edit(json);
 
     if (!file) return;

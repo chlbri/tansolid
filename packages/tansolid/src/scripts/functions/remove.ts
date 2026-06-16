@@ -9,6 +9,7 @@ import {
 } from '../helpers';
 import type { FileAnalysis } from '@bemedev/codebase';
 import type { Options } from './add';
+import { JSON_PATH } from '../constants';
 
 const transformModules = (
   entries: [string, FileAnalysis][],
@@ -52,7 +53,7 @@ export const remove = (options: Options = {}) => {
   if (isEmpty) return console.warn('No files specified for removal.');
   try {
     const cwd = process.cwd();
-    const json = join(cwd, '.bemedev.json');
+    const json = join(cwd, JSON_PATH);
     let file: JsonEditor | undefined = edit(json);
 
     if (!file) return;

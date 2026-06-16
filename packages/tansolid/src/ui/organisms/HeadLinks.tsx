@@ -3,6 +3,9 @@ import { For, type Component } from 'solid-js';
 import { createLinks, formatLabel1 as formatLabel } from '~signals/links';
 import type { PropsOf } from '../../types';
 
+/**
+ * Properties for individual navigation links.
+ */
 type LinkProps = Omit<
   ReturnType<typeof createLinks>[number],
   'children' | 'search'
@@ -10,6 +13,9 @@ type LinkProps = Omit<
   Partial<Pick<ReturnType<typeof createLinks>[number], 'search'>> &
   PropsOf<typeof _Link, 'children'>;
 
+/**
+ * Single navigation Link wrapper component connecting to TanStack Router.
+ */
 const Link: Component<LinkProps> = ({
   children,
   to,
@@ -30,6 +36,10 @@ const Link: Component<LinkProps> = ({
   );
 };
 
+/**
+ * HeadLinks component that renders a header navigation bar with parsed routing links.
+ * @returns The rendered header navigation component.
+ */
 export const HeadLinks: Component = () => {
   const LINKS = createLinks({
     filter: value => value === '/projects' || !value.includes('projects'),

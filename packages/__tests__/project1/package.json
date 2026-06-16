@@ -49,9 +49,9 @@
     "vite": "^8.0.16"
   },
   "devDependencies": {
-    "@bemedev/tansolid": "workspace:^",
     "@bemedev/dev-utils": "^0.8.0",
-    "@content-collections/core": "^0.15.1",
+    "@bemedev/tansolid": "workspace:^",
+    "@content-collections/core": "^0.15.2",
     "@content-collections/markdown": "^0.1.4",
     "@content-collections/vite": "^0.3.0",
     "@solidjs/testing-library": "^0.8.10",
