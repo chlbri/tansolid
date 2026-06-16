@@ -26,5 +26,6 @@
       "approve": true,
       "matchCommandLine": true
     }
-  }
+  },
+  "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"]
 }
