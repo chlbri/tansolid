@@ -34,6 +34,10 @@
   "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
+  "bin": "lib/scripts/cli/index.js",
+  "imports": {
+    "#codebase": "./.codebase.json"
+  },
   "exports": {
     ".": {
       "import": "./lib/index.js",
@@ -117,7 +121,8 @@
     }
   },
   "scripts": {
-    "build": "pnpm run rm:lib && pnpm run rolldown",
+    "build": "pnpm run rm:lib && pnpm run codegen && pnpm run rolldown",
+    "codegen": "tsx src/scripts/codegen.ts",
     "_ci": "pnpm run lint && pnpm run test",
     "ci": "CI_START=$(date +%s) && pnpm run config:off && pnpm run lint && pnpm run test && echo \"\\n✅ CI takes $(($(date +%s) - CI_START))s\\n\"",
     "ci:admin": "pnpm run rm && pnpm run upgrade && pnpm run ci",
@@ -146,9 +151,12 @@
     "upgrade": "pnpm upgrade --latest"
   },
   "dependencies": {
+    "@bemedev/codebase": "^0.3.0",
     "@bemedev/pipe": "^1.6.1",
     "clsx": "^2.1.1",
+    "cmd-ts": "^0.15.0",
     "color": "^5.0.3",
+    "edit-json-file": "^1.8.1",
     "tailwind-merge": "^3.6.0"
   },
   "peerDependencies": {
@@ -162,6 +170,7 @@
     "@bemedev/rolldown-config": "^0.5.0",
     "@kobalte/core": "^0.13.11",
     "@tanstack/solid-router": "1.170.15",
+    "@types/edit-json-file": "^1.7.4",
     "@types/node": "^25.9.3",
     "@vitest/coverage-v8": "^4.1.9",
     "@vitest/ui": "^4.1.9",

@@ -1,5 +1,11 @@
 import type { Position } from './Tooltip.types';
 
+/**
+ * Resolves the CSS Tailwind classes for positioning a tooltip relative to its parent element.
+ * @param position - The preferred position. Defaults to 'top'.
+ * @param computedPosition - Fallback/computed screen position ('top' or 'bottom') if layout-flipping is required.
+ * @returns CSS class string.
+ */
 export const getPositionClass = (
   position: Position = 'top',
   computedPosition?: 'top' | 'bottom',

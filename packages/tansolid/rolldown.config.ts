@@ -12,5 +12,8 @@ export default defineConfig.bemedev({
     'color',
     'tailwind-merge',
     '@bemedev/pipe',
+    '@bemedev/codebase',
+    'cmd-ts',
+    'edit-json-file',
   ],
 }) as any;

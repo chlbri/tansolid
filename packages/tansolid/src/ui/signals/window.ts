@@ -7,15 +7,32 @@ import {
   type Accessor,
 } from 'solid-js';
 
+/**
+ * Safely accesses the `window` object in SSR-safe environments by returning a deferred signal.
+ * @returns A deferred accessor for the Window object.
+ */
 export const assignWindow = () => {
   const [win, setWin] = createSignal<Window>();
   onMount(() => setWin(window));
   return createDeferred(win, { timeoutMs: 15 });
 };
 
+/**
+ * Object mapping action keys to window-handler operations.
+ */
 export type UseWindowProps = Record<string, (win: Window) => void>;
+
+/**
+ * Return type map for window callbacks.
+ */
 type Out<T extends UseWindowProps> = { [K in keyof T]: () => void };
 
+/**
+ * Creates actions that safely interact with the window object when it becomes available.
+ * @template T - The custom shape of window operations.
+ * @param props - Key-value map of callback operations that require a `Window` instance.
+ * @returns Safe wrappers for each callback.
+ */
 export const useWindow = <const T extends UseWindowProps>(
   props: T,
 ): Out<T> => {

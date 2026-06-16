@@ -1,8 +1,19 @@
 import { createSignal } from 'solid-js';
 import { createDebounce } from './debounce';
 
+/**
+ * Storage key used to persist the selected language in localStorage.
+ */
 export const LANG_STORE_KEY = 'lang';
+
+/**
+ * Array of supported language codes in the application.
+ */
 export const LANGS = ['fr', 'en', 'es'] as const;
+
+/**
+ * Type representing one of the supported language codes.
+ */
 export type Lang = (typeof LANGS)[number];
 
 const createLang = () => {
@@ -24,4 +35,7 @@ const createLang = () => {
   return [lang, debounce] as const;
 };
 
+/**
+ * Global signal representing the active language state and its debounced setter.
+ */
 export const [lang, setLang] = createLang();

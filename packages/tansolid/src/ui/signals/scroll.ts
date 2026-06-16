@@ -1,5 +1,10 @@
 import { createSignal } from 'solid-js';
 
+/**
+ * Creates scroll controllers (scrollY, scrollX) linked to a target DOM element via ref.
+ * @param behavior - The scroll behavior (e.g. 'smooth', 'auto'). Defaults to 'smooth'.
+ * @returns An object containing setRef, scrollY, and scrollX functions.
+ */
 export const createScroll = (
   behavior: ScrollOptions['behavior'] = 'smooth',
 ) => {

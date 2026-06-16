@@ -12,12 +12,18 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
+  ssr: {
+    noExternal: ['@bemedev/tansolid'],
+  },
 
   plugins: [
     tailwindcss(),
     contentCollections({}),
     tanstackStart({}),
     nitro(),
-    viteSolid({ ssr: true }),
+    viteSolid({
+      ssr: true,
+      extensions: ['.js', '.ts', '.jsx', '.tsx'],
+    }),
   ],
 });

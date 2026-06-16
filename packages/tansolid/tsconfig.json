@@ -25,6 +25,7 @@
     "noEmit": true,
     "declarationMap": true,
     "paths": {
+      "#codebase": ["./.codebase.json"],
       "~types": ["./src/types/index.ts"],
       "~ui/*": ["./src/ui/*"],
       "#constants": ["./src/constants/index.ts"],

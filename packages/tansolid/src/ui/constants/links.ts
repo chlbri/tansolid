@@ -1,5 +1,8 @@
 import type { RootLink } from '../../types';
 
+/**
+ * Standard preconnect links for importing Google Fonts in the application head.
+ */
 export const GOOGLE_FONTS_LINKS: RootLink[] = [
   {
     rel: 'preconnect',

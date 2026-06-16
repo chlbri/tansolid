@@ -1,5 +1,10 @@
 import { createSignal } from 'solid-js';
 
+/**
+ * Creates a counter signal with increment, decrement, and custom stepping/setting functions.
+ * @param intitial - The initial counter value. Defaults to 0.
+ * @returns An object containing count signal and updater methods.
+ */
 export const createCounter = (intitial = 0) => {
   const [count, _setCount] = createSignal(intitial);
 

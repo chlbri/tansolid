@@ -13,6 +13,11 @@ type ExtractFn<T extends keyof PropsHandlers> = (
   e: Parameters<Extract<PropsHandlers[T], (...args: any) => any>>[0],
 ) => any;
 
+/**
+ * Custom hook managing the visibility, timing, positioning, and event handlers for the Tooltip component.
+ * @param props - Tooltip properties like show/hide delay and positioning preference.
+ * @returns State accessors, computed styles, ref setters, and event handlers.
+ */
 export const useHook = (
   props: Omit<ToolTipProps, 'children' | 'tooltip'>,
 ) => {

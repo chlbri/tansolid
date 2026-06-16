@@ -2,13 +2,25 @@ import { createSignal, onCleanup } from 'solid-js';
 import { VISIBLE_ESPACE } from '../constants';
 import { espace } from '../helpers/espace';
 
+/**
+ * Properties for the typing animation signal.
+ */
 type Props = {
+  /** The text content to type out. */
   content: string;
+  /** The base typing interval in milliseconds. */
   min: number;
+  /** Whether the typing should delete itself and loop. Defaults to false. */
   rewind?: boolean;
+  /** Delay before rewinding or typing again in milliseconds. Defaults to 500. */
   rewindDelay?: number;
 };
 
+/**
+ * Creates a typing animation effect with text signals and state.
+ * @param props - Configuration including content, typing speed boundaries, and rewind behavior.
+ * @returns An object containing the current text signal, type trigger function, and manual setter.
+ */
 export const createTyping = ({ content, min, ...props }: Props) => {
   const rewind = props.rewind ?? false;
   const rewindDelay = (props as any).rewindDelay ?? 500;

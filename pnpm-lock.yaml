@@ -327,15 +327,24 @@ importers:
 
   packages/tansolid:
     dependencies:
+      '@bemedev/codebase':
+        specifier: ^0.3.0
+        version: 0.3.0(typescript@6.0.3)
       '@bemedev/pipe':
         specifier: ^1.6.1
         version: 1.6.1
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      cmd-ts:
+        specifier: ^0.15.0
+        version: 0.15.0
       color:
         specifier: ^5.0.3
         version: 5.0.3
+      edit-json-file:
+        specifier: ^1.8.1
+        version: 1.8.1
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
@@ -352,6 +361,9 @@ importers:
       '@tanstack/solid-router':
         specifier: 1.170.15
         version: 1.170.15(solid-js@1.9.13)
+      '@types/edit-json-file':
+        specifier: ^1.7.4
+        version: 1.7.4
       '@types/node':
         specifier: ^25.9.3
         version: 25.9.3
@@ -555,6 +567,11 @@ packages:
   '@bemedev/boolean-recursive@0.0.3':
     resolution: {integrity: sha512-g8DBCDtsvAs+JV81NgvlXqG4YrSTHzYEidku9cKAnBiRyhSV0T2CejM6ECcozwGBKE5S4c7YGCyugg8EcqsJ7g==}
     engines: {node: '>=20'}
+
+  '@bemedev/codebase@0.3.0':
+    resolution: {integrity: sha512-GyowmMp9+uk4j7HEhN/CgexvLaUBOZDhuTEYmeCyIPHpr4DN9qpn0fekEcakc3pzJEm2i3OTqKhkYVEGdQJW2w==}
+    engines: {node: '>=24'}
+    hasBin: true
 
   '@bemedev/decompose@2.2.0':
     resolution: {integrity: sha512-fawzPvVwSaX65bjL4sGxfoSxnsmmj3d8mF39w2AP7l+xngXY/pQyI7ugje8e2izpIiFRp1/L9VF3yuF/VZVoRg==}
@@ -2270,6 +2287,9 @@ packages:
   '@toolwind/corner-shape@0.0.8-3':
     resolution: {integrity: sha512-MPIF81F2bhtXbzEeXF0vnL+PKpnopCHOzBspOkK8osMzWQvPUujZn2XZOMdsu4DF6wsVbbRYQtdsJr486HmIPQ==}
 
+  '@ts-morph/common@0.28.1':
+    resolution: {integrity: sha512-W74iWf7ILp1ZKNYXY5qbddNaml7e9Sedv5lvU1V8lftlitkc9Pq1A+jlH23ltDgWYeZFFEqGCD1Ies9hqu3O+g==}
+
   '@ts-morph/common@0.29.0':
     resolution: {integrity: sha512-35oUmphHbJvQ/+UTwFNme/t2p3FoKiGJ5auTjjpNTop2dyREspirjMy82PLSC1pnDJ8ah1GU98hwpVt64YXQsg==}
 
@@ -2306,6 +2326,9 @@ packages:
   '@types/deep-eql@4.0.2':
     resolution: {integrity: sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==}
 
+  '@types/edit-json-file@1.7.4':
+    resolution: {integrity: sha512-lltApjZ/bhirCs4UweEgft9iPG8LvIWHSoL6YwXeGjmL7lbs2vWjn50IdAKlyXcbulWiSZJyfrcb+FS2803nGg==}
+
   '@types/estree@1.0.9':
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
@@ -2335,6 +2358,9 @@ packages:
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
+
+  '@types/set-value@4.0.3':
+    resolution: {integrity: sha512-tSuUcLl6kMzI+l0gG7FZ04xbIcynxNIYgWFj91LPAvRcn7W3L1EveXNdVjqFDgAZPjY1qCOsm8Sb1C70SxAPHw==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -4776,6 +4802,9 @@ packages:
     resolution: {integrity: sha512-Du/ZW2RfwV/D4cmA5rXafYjBQVuvu4qGiEEla4EmEHVHgRdx68Gftx7i66jn2bzHPwSVZY36Ae6OuDn9el4ZKA==}
     engines: {node: '>=14.13.1'}
 
+  ts-morph@27.0.2:
+    resolution: {integrity: sha512-fhUhgeljcrdZ+9DZND1De1029PrE+cMkIP7ooqkLRTrRLTqcki2AstsyJm0vRNbTbVCNJ0idGlbBrfqc7/nA8w==}
+
   ts-morph@28.0.0:
     resolution: {integrity: sha512-Wp3tnZ2bzwxyTZMtgWVzXDfm7lB1Drz+y9DmmYH/L702PQhPyVrp3pkou3yIz4qjS14GY9kcpmLiOOMvl8oG1g==}
 
@@ -5528,6 +5557,16 @@ snapshots:
   '@bemedev/better-set@0.2.1': {}
 
   '@bemedev/boolean-recursive@0.0.3': {}
+
+  '@bemedev/codebase@0.3.0(typescript@6.0.3)':
+    dependencies:
+      cmd-ts: 0.15.0
+      edit-json-file: 1.8.1
+      ts-morph: 27.0.2
+      valibot: 1.4.1(typescript@6.0.3)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   '@bemedev/decompose@2.2.0(@bemedev/types@0.4.2)':
     dependencies:
@@ -6857,6 +6896,12 @@ snapshots:
     dependencies:
       '@types/node': 20.19.43
 
+  '@ts-morph/common@0.28.1':
+    dependencies:
+      minimatch: 10.2.5
+      path-browserify: 1.0.1
+      tinyglobby: 0.2.17
+
   '@ts-morph/common@0.29.0':
     dependencies:
       minimatch: 10.2.5
@@ -6906,6 +6951,11 @@ snapshots:
 
   '@types/deep-eql@4.0.2': {}
 
+  '@types/edit-json-file@1.7.4':
+    dependencies:
+      '@types/node': 25.9.3
+      '@types/set-value': 4.0.3
+
   '@types/estree@1.0.9': {}
 
   '@types/hast@3.0.4':
@@ -6935,6 +6985,8 @@ snapshots:
       undici-types: 7.24.6
 
   '@types/resolve@1.20.2': {}
+
+  '@types/set-value@4.0.3': {}
 
   '@types/unist@3.0.3': {}
 
@@ -9616,6 +9668,11 @@ snapshots:
   trough@2.2.0: {}
 
   ts-deepmerge@7.0.3: {}
+
+  ts-morph@27.0.2:
+    dependencies:
+      '@ts-morph/common': 0.28.1
+      code-block-writer: 13.0.3
 
   ts-morph@28.0.0:
     dependencies:

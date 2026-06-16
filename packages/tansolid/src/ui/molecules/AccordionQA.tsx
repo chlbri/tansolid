@@ -1,8 +1,14 @@
 import { Accordion as AccordionD } from '~cn-comp/accordion';
 import { For, type Accessor, type Component } from 'solid-js';
 
+/**
+ * Data structure representing a question-answer pair in the accordion list.
+ */
 export type AccordionData = { question: string; answer: string };
 
+/**
+ * Internal single Accordion Item component.
+ */
 const Item: Component<AccordionData & { index: Accessor<number> }> = ({
   question,
   answer,
@@ -16,6 +22,11 @@ const Item: Component<AccordionData & { index: Accessor<number> }> = ({
   );
 };
 
+/**
+ * AccordionQA component displaying a list of collapsible questions and answers.
+ * @param props - Object containing data list of question-answer pairs.
+ * @returns The rendered Accordion component.
+ */
 export const AccordionQA: Component<{ data: AccordionData[] }> = ({
   data,
 }) => {

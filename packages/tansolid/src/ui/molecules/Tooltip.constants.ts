@@ -1,3 +1,6 @@
+/**
+ * List of allowed tooltip position coordinates/types.
+ */
 export const POSITIONS = [
   'top',
   'bottom',

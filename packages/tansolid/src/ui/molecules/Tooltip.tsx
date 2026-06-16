@@ -3,6 +3,11 @@ import { cn } from '../cn/utils';
 import { useHook } from './Tooltip.hook';
 import type { ToolTipProps } from './Tooltip.types';
 
+/**
+ * ToolTip component that displays a tooltip overlay on hover, focus, or custom interaction.
+ * @param props - Tooltip properties including tooltip content, placement preference, and trigger delays.
+ * @returns The rendered tooltipped component container.
+ */
 export const ToolTip: Component<ToolTipProps> = props => {
   const { isVisible, positionClass, setContainerRef, handlers, local } =
     useHook(props);

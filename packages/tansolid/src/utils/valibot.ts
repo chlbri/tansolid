@@ -1,7 +1,18 @@
 import * as v from 'valibot';
 
+/**
+ * Modes of parsing strictness/options.
+ */
 type Options = 'typed' | 'strict' | 'low';
 
+/**
+ * Creates a synchronous parser function for the provided Valibot schema.
+ * @template T - The Valibot schema type.
+ * @template Ty - The parsing option/strictness mode.
+ * @param schema - The Valibot schema.
+ * @param typed - The strictness option ('typed', 'strict', or 'low'). Defaults to 'typed'.
+ * @returns A parsing function that takes a value and validates it against the schema.
+ */
 export const create = <
   const T extends v.BaseSchema<unknown, unknown, v.BaseIssue<unknown>>,
   Ty extends Options = 'typed',
@@ -23,6 +34,14 @@ export const create = <
   return out;
 };
 
+/**
+ * Creates an asynchronous parser function for the provided Valibot schema.
+ * @template T - The Valibot schema type.
+ * @template Ty - The parsing option/strictness mode.
+ * @param schema - The Valibot schema.
+ * @param typed - The strictness option ('typed', 'strict', or 'low'). Defaults to 'typed'.
+ * @returns A promise-based parsing function that takes a value and validates it against the schema.
+ */
 export const createAsync = <
   const T extends v.BaseSchema<unknown, unknown, v.BaseIssue<unknown>>,
   Ty extends Options = 'typed',

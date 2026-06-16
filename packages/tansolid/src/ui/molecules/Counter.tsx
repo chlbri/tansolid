@@ -1,5 +1,10 @@
 import type { Accessor, Component } from 'solid-js';
 
+/**
+ * Simple button-based Counter component displaying a label and click count.
+ * @param props - Object containing onClick callback, count accessor, and display label.
+ * @returns The rendered JSX button element.
+ */
 export const Counter: Component<{
   onClick: () => void;
   count: Accessor<number>;
