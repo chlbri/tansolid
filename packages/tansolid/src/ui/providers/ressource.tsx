@@ -9,7 +9,7 @@ import { createResourceContext, ResourceContext } from '../signals';
  *
  * @example
  * ```tsx
- * import { ResourceProvider } from '~/globals/ui/signals/ressource';
+ * import { ResourceProvider } from '@bemedev/tansolid/signals';
  *
  * export default function Root() {
  *   return (

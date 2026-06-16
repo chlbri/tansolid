@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { TypingText } from '~/globals/ui/molecules/TypingText';
+import { TypingText } from '../molecules/TypingText';
 import { cn } from '~cn/utils';
 import { FadingDots } from '../molecules/FadingDots';
 

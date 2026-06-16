@@ -5,6 +5,8 @@ import type {
   ValidComponent,
 } from 'solid-js';
 
+export type Fn<Args extends any[] = any[], R = any> = (...args: Args) => R;
+
 export type PropsOf<
   T extends ValidComponent,
   K extends keyof ComponentProps<T> = never,

@@ -107,7 +107,7 @@ export const ResourceContext = createContext<
  *
  * @example
  * ```tsx
- * import { createResourceContext } from '~/globals/ui/signals/ressource';
+ * import { createResourceContext } from '@bemedev/tansolid/signals';
  *
  * // In your root component
  * export const App = () => {
@@ -260,7 +260,7 @@ export const createResourceContext = () => {
  *
  * @example
  * ```tsx
- * import { useResource } from '~/globals/ui/signals/ressource';
+ * import { useResource } from '@bemedev/tansolid/signals';
  * import { createEffect } from 'solid-js';
  *
  * const MyComponent = () => {
