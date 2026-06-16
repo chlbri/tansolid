@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-import seo from '~seo';
+import { seo } from '@bemedev/tansolid/utils';
 import {
   createRootRoute,
   Outlet,
@@ -9,7 +9,7 @@ import {
 } from '@tanstack/solid-router';
 import { TanStackRouterDevtools } from '@tanstack/solid-router-devtools';
 import appCss from '../../tailwind.css?url';
-import HeadLinks from '~ui/organisms/HeadLinks';
+import { HeadLinks } from '@bemedev/tansolid/organisms';
 import { HydrationScript } from 'solid-js/web';
 
 export const Route = createRootRoute({

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/solid-router';
-import AccordionQA from '~ui/molecules/AccordionQA';
+import { AccordionQA } from '@bemedev/tansolid/molecules';
 
 export const Route = createFileRoute('/')({
   component: () => {

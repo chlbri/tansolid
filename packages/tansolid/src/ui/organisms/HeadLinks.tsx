@@ -30,7 +30,7 @@ const Link: Component<LinkProps> = ({
   );
 };
 
-const HeadLinks: Component = () => {
+export const HeadLinks: Component = () => {
   const LINKS = createLinks({
     filter: value => value === '/projects' || !value.includes('projects'),
     formatLabel,
@@ -42,5 +42,3 @@ const HeadLinks: Component = () => {
     </header>
   );
 };
-
-export default HeadLinks;

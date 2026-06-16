@@ -14,22 +14,6 @@
     "target": "ES2022",
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "~/*": ["./src/*"],
-      "~features/*": ["./src/features/*"],
-      "~signals/*": ["../../tansolid/src/ui/signals/*"],
-      "~directives/*": ["../../tansolid/src/ui/directives/*"],
-      "#directives": ["../../tansolid/src/ui/directives/index.ts"],
-      "~ui/*": ["../../tansolid/src/ui/*"],
-      "#constants": ["../../tansolid/src/constants/index.ts"],
-      "~services/*": ["../../tansolid/src/services/*"],
-      "~types": ["../../tansolid/src/types/index.ts"],
-      "~utils/*": ["../../tansolid/src/utils/*"],
-      "~cn/*": ["../../tansolid/src/ui/cn/*"],
-      "~cn-comp/*": ["../../tansolid/src/ui/cn/components/ui/*"],
-      "~helpers/*": ["./src/helpers/*"],
-      "~seo": ["../../tansolid/src/ui/helpers/seo.ts"]
-    },
     "noEmit": true
   }
 }

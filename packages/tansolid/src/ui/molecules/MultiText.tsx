@@ -9,11 +9,11 @@ type Props<T extends string[]> = {
   };
 } & OmitPropsOf<'span', 'children'>;
 
-export function MultiText<const T extends string[]>({
+export const MultiText = <const T extends string[]>({
   texts,
   props: _props,
   ...rest
-}: Props<T>) {
+}: Props<T>) => {
   const [local, all] = splitProps(rest, ['class']);
 
   return (
@@ -24,4 +24,4 @@ export function MultiText<const T extends string[]>({
       })}
     </span>
   );
-}
+};

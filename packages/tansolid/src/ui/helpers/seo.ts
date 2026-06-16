@@ -5,7 +5,7 @@ type Props = {
   keywords?: string;
 };
 
-const seo = ({ title, description, keywords, image }: Props) => {
+export const seo = ({ title, description, keywords, image }: Props) => {
   const tags = [
     { title },
     { name: 'description', content: description },
@@ -26,5 +26,3 @@ const seo = ({ title, description, keywords, image }: Props) => {
 
   return tags;
 };
-
-export default seo;

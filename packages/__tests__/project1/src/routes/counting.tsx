@@ -1,7 +1,6 @@
-import { createCounter } from '~signals/counter';
+import { createCounter } from '@bemedev/tansolid/signals';
 import { createFileRoute } from '@tanstack/solid-router';
-import Counter from '~ui/molecules/Counter';
-import { reduceComponent } from '~ui/molecules/reducer';
+import { Counter, reduceComponent } from '@bemedev/tansolid/molecules';
 
 export const Route = createFileRoute('/counting')({
   // Test data from loader
