@@ -1,6 +1,6 @@
 import type { JSX } from 'solid-js';
 import type { POSITIONS } from './Tooltip.constants';
-import type { OmitPropsOf } from '../types';
+import type { OmitPropsOf } from '../../types';
 
 export type Position = (typeof POSITIONS)[number];
 

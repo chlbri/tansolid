@@ -1,1 +1,1 @@
-export * from './LocalImage';
+export {};

@@ -6,5 +6,5 @@ export * from './molecules';
 export * from './organisms';
 export * from './providers';
 export * from './signals';
-export * from './types';
+export * from '../types';
 export * from './cn/utils';

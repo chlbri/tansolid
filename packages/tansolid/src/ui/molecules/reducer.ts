@@ -1,5 +1,5 @@
 import { type Component, type ComponentProps } from 'solid-js';
-import type { RC } from '~ui/types';
+import type { RC } from '../../types';
 
 export const reduceComponent = <
   const T extends Component<any>,

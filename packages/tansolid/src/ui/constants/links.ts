@@ -1,4 +1,4 @@
-import type { RootLink } from '../types';
+import type { RootLink } from '../../types';
 
 export const GOOGLE_FONTS_LINKS: RootLink[] = [
   {

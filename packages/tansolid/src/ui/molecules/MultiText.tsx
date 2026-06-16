@@ -1,5 +1,5 @@
 import { splitProps } from 'solid-js';
-import type { OmitPropsOf } from '../types';
+import type { OmitPropsOf } from '../../types';
 import { cn } from '../cn/utils';
 
 type Props<T extends string[]> = {

@@ -1,7 +1,7 @@
 import { Link as _Link } from '@tanstack/solid-router';
 import { For, type Component } from 'solid-js';
 import { createLinks, formatLabel1 as formatLabel } from '~signals/links';
-import type { PropsOf } from '~ui/types';
+import type { PropsOf } from '../../types';
 
 type LinkProps = Omit<
   ReturnType<typeof createLinks>[number],

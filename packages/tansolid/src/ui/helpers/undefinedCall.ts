@@ -1,5 +1,5 @@
 import type { JSX } from 'solid-js';
-import type { Fn } from '../types';
+import type { Fn } from '../../types';
 
 type CamelCaseHandler<T> =
   JSX.CustomEventHandlersCamelCase<T>[keyof JSX.CustomEventHandlersCamelCase<T>];

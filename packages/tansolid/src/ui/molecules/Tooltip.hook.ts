@@ -1,7 +1,7 @@
 import { createMemo, createSignal, splitProps } from 'solid-js';
 import type { ToolTipProps } from './Tooltip.types';
 import { undefinedCall } from '../helpers';
-import type { PropsOf } from '../types';
+import type { PropsOf } from '../../types';
 import { getPositionClass } from './Tooltip.helpers';
 
 type PropsHandlers = PropsOf<
