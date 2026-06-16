@@ -1,0 +1,14 @@
+packages:
+  - "packages/tansolid"
+  - "packages/__tests__/project1"
+
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+
+nodeLinker: hoisted
+
+minimumReleaseAge: 300
+
+minimumReleaseAgeExclude:
+  - "@bemedev/dev-utils@0.8.0"

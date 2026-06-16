@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "importHelpers": true,
+    "target": "ESNext",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./lib",
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noErrorTruncation": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "Bundler",
+    "types": ["vitest/globals", "node"],
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "declarationMap": true,
+    "paths": {
+      "~types": ["./src/types/index.ts"],
+      "~ui/*": ["./src/ui/*"],
+      "#constants": ["./src/constants/index.ts"],
+      "~utils/*": ["./src/utils/*"],
+      "~cn/*": ["./src/ui/cn/*"],
+      "~cn-comp/*": ["./src/ui/cn/components/ui/*"],
+      "~signals/*": ["./src/ui/signals/*"],
+      "~directives/*": ["./src/ui/directives/*"],
+      "#directives": ["./src/ui/directives/index.ts"]
+    }
+  }
+}
