@@ -1,3 +1,4 @@
+/** @jsxImportSource solid-js */
 import { Accordion as AccordionD } from '~cn-comp/accordion';
 import { For, type Accessor, type Component } from 'solid-js';
 

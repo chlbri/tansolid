@@ -149,6 +149,9 @@ importers:
       '@types/node':
         specifier: ^25.9.3
         version: 25.9.3
+      solid-js:
+        specifier: ^1.9.13
+        version: 1.9.13
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -346,8 +349,8 @@ importers:
   packages/tansolid:
     dependencies:
       '@bemedev/codebase':
-        specifier: ^1.0.0
-        version: 1.0.0(typescript@6.0.3)
+        specifier: ^1.2.2
+        version: 1.2.2(typescript@6.0.3)
       '@bemedev/pipe':
         specifier: ^1.6.1
         version: 1.6.1
@@ -562,8 +565,8 @@ packages:
     resolution: {integrity: sha512-g8DBCDtsvAs+JV81NgvlXqG4YrSTHzYEidku9cKAnBiRyhSV0T2CejM6ECcozwGBKE5S4c7YGCyugg8EcqsJ7g==}
     engines: {node: '>=20'}
 
-  '@bemedev/codebase@1.0.0':
-    resolution: {integrity: sha512-ouZUgITVRHTlivriZDDorCBzs5S+4ZhgYhJrsPPlep9ISE2bMW3Uo5plhcKsfDRgG310kReDR9L4MfZeLEkd+g==}
+  '@bemedev/codebase@1.2.2':
+    resolution: {integrity: sha512-aeMYr1xL8szMtWVZoa16xmeEgyS4TINHV4TOki/RSpI88Hn9ZdCC5lUZ0hmiaD1ED4m6FOusoUrtN1qo/HYwQQ==}
     engines: {node: '>=24'}
     hasBin: true
 
@@ -3004,8 +3007,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.373:
-    resolution: {integrity: sha512-G2Hym8JIf/QreuseqkDibgH8Ci8KfJzqGDKdakbhSx9UltwRBH2cBLAWU/lBX0sCdv0TlhyxQyDCnSfxgMWsjA==}
+  electron-to-chromium@1.5.374:
+    resolution: {integrity: sha512-HCF5i7izveksHSGqa7mhDh6tr3Uz9Dar2RAjwuh69bw3QGPVObjQIgLwQWeO/Rxp9/r0KdboKy9RbpQDl97fjg==}
 
   emoji-regex@10.6.0:
     resolution: {integrity: sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==}
@@ -5482,7 +5485,7 @@ snapshots:
 
   '@bemedev/boolean-recursive@0.0.3': {}
 
-  '@bemedev/codebase@1.0.0(typescript@6.0.3)':
+  '@bemedev/codebase@1.2.2(typescript@6.0.3)':
     dependencies:
       cmd-ts: 0.15.0
       edit-json-file: 1.8.1
@@ -7258,7 +7261,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.10.37
       caniuse-lite: 1.0.30001799
-      electron-to-chromium: 1.5.373
+      electron-to-chromium: 1.5.374
       node-releases: 2.0.47
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
@@ -7573,7 +7576,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.373: {}
+  electron-to-chromium@1.5.374: {}
 
   emoji-regex@10.6.0: {}
 

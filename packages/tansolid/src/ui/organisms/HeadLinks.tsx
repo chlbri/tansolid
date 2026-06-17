@@ -1,3 +1,4 @@
+/** @jsxImportSource solid-js */
 import { Link as _Link } from '@tanstack/solid-router';
 import { For, type Component } from 'solid-js';
 import { createLinks, formatLabel1 as formatLabel } from '~signals/links';

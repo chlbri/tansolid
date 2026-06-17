@@ -1,4 +1,4 @@
-import { DEFAULT_ROOT, JSON_PATH } from '../constants';
+import { CLI_NAME, JSON_PATH } from '../constants';
 import { command, option, string } from 'cmd-ts';
 import { init as handler } from '../functions/init';
 
@@ -19,7 +19,7 @@ export const init = command({
       env: 'BEMEDEV_ROOT',
       description: 'Root directory to store the analysis files',
       type: string,
-      defaultValue: () => DEFAULT_ROOT,
+      defaultValue: () => CLI_NAME,
     }),
   },
   handler,

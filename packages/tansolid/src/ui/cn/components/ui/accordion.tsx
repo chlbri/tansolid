@@ -1,3 +1,4 @@
+/** @jsxImportSource solid-js */
 import { cn } from '~cn/utils';
 import type {
   AccordionContentProps,

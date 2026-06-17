@@ -1,3 +1,4 @@
+/** @jsxImportSource solid-js */
 import type { Component } from 'solid-js';
 import { TypingText } from '../molecules/TypingText';
 import { cn } from '~cn/utils';

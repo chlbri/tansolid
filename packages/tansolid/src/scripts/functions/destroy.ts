@@ -1,4 +1,4 @@
-import { config } from '#config';
+import { JSON_PATH } from '#config';
 import edit, { type JsonEditor } from 'edit-json-file';
 import { rmSync } from 'node:fs';
 import { join } from 'node:path';
@@ -9,7 +9,7 @@ import { getFolderPath } from '../helpers';
  */
 export function destroy() {
   const cwd = process.cwd();
-  const jsonPath = join(cwd, config.json);
+  const jsonPath = join(cwd, JSON_PATH);
   let file: JsonEditor | undefined = edit(jsonPath);
   const root = file?.get('path') as string | undefined;
   if (root) {
@@ -25,10 +25,10 @@ export function destroy() {
   file = undefined;
   try {
     rmSync(jsonPath, { force: true });
-    console.log(`Configuration file ("${config.json}") has been removed.`);
+    console.log(`Configuration file ("${JSON_PATH}") has been removed.`);
   } catch {
     console.error(
-      `Error while removing the configuration file ("${config.json}").`,
+      `Error while removing the configuration file ("${JSON_PATH}").`,
     );
   }
 }

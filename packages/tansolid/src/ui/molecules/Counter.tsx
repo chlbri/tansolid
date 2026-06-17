@@ -1,3 +1,4 @@
+/** @jsxImportSource solid-js */
 import type { Accessor, Component } from 'solid-js';
 
 /**

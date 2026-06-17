@@ -1,3 +1,4 @@
+/** @jsxImportSource solid-js */
 import { splitProps, type Component, JSX } from 'solid-js';
 import type { OmitPropsOf } from '../../types';
 import { cn } from '../cn/utils';

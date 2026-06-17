@@ -1,3 +1,4 @@
+/** @jsxImportSource solid-js */
 import { cn } from '~cn/utils';
 import type { PolymorphicProps } from '@kobalte/core/polymorphic';
 import type { RadioGroupItemControlProps } from '@kobalte/core/radio-group';

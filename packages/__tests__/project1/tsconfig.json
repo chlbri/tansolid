@@ -1,9 +1,4 @@
 {
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "public/script*.js"
-  ],
   "compilerOptions": {
     "strict": true,
     "esModuleInterop": true,
@@ -11,11 +6,7 @@
     "jsxImportSource": "solid-js",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ES2022"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -24,9 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "paths": {
-      "#bemedev/*": [
-        "./src/.tansolid/*"
-      ]
+      "#bemedev/*": ["./src/.tansolid/*"]
     }
   }
 }

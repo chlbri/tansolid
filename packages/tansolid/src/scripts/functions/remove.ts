@@ -1,3 +1,4 @@
+import { JSON_PATH } from '#config';
 import { getFile } from '../helpers';
 import type { Options } from './add';
 
@@ -12,5 +13,5 @@ export const remove = (options: Options = {}) => {
   const { CODEBASE_ANALYSIS } = getFile();
   const files = toArray(options.files);
 
-  return _remove(CODEBASE_ANALYSIS, ...files);
+  return _remove(CODEBASE_ANALYSIS, JSON_PATH, ...files);
 };

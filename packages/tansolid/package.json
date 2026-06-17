@@ -121,7 +121,7 @@
     }
   },
   "scripts": {
-    "build": "pnpm run rm:lib && pnpm run rolldown && pnpm run codegen && chmod +x lib/scripts/cli/index.js",
+    "build": "pnpm run rm:lib && pnpm run codegen && pnpm run rolldown && chmod +x lib/scripts/cli/index.js",
     "codegen": "pnpm codebase -x \"./src/**/*.test-d.ts\" -x \"./src/scripts/**/*\"",
     "_ci": "pnpm run lint && pnpm run test",
     "ci": "CI_START=$(date +%s) && pnpm run config:off && pnpm run lint && pnpm run test && echo \"\\n✅ CI takes $(($(date +%s) - CI_START))s\\n\"",
@@ -151,7 +151,7 @@
     "upgrade": "pnpm upgrade --latest"
   },
   "dependencies": {
-    "@bemedev/codebase": "^1.0.0",
+    "@bemedev/codebase": "^1.2.2",
     "@bemedev/pipe": "^1.6.1",
     "clsx": "^2.1.1",
     "cmd-ts": "^0.15.0",

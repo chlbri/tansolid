@@ -1,17 +1,17 @@
 {
   "STATS": {
-    "files": 51,
-    "imports": 42,
-    "exports": 474
+    "files": 63,
+    "imports": 80,
+    "exports": 500
   },
   "CODEBASE_ANALYSIS": {
-    "constants.colors": {
+    "constants/colors": {
       "imports": [],
       "relativePath": "constants/colors.ts",
       "text": "/**\n * PRIMARY_COLOR variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const PRIMARY_COLOR = '#2C5364';\n",
       "exports": []
     },
-    "constants.index": {
+    "constants/index": {
       "imports": [],
       "relativePath": "constants/index.ts",
       "text": "export * from './colors';\n",
@@ -49,7 +49,7 @@
         }
       ]
     },
-    "types.index": {
+    "types/index": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -67,13 +67,97 @@
       "text": "import type { Component, ComponentProps, JSX, ValidComponent } from 'solid-js';\n\n/**\n * Represents a generic function type.\n * @template Args - The tuple type of the function arguments.\n * @template R - The return type of the function.\n */\n/**\n * Fn type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Fn<Args extends any[] = any[], R = any> = (...args: Args) => R;\n\n/**\n * Extracts a subset of props from a valid SolidJS component.\n * @template T - The SolidJS valid component type.\n * @template K - The keys of the component props to pick.\n */\n/**\n * PropsOf type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PropsOf<\n  T extends ValidComponent,\n  K extends keyof ComponentProps<T> = never,\n> = Pick<ComponentProps<T>, K>;\n\n/**\n * Omits a subset of props from a valid SolidJS component.\n * @template T - The SolidJS valid component type.\n * @template K - The keys of the component props to omit.\n */\n/**\n * OmitPropsOf type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type OmitPropsOf<\n  T extends ValidComponent,\n  K extends keyof ComponentProps<T> = never,\n> = Omit<ComponentProps<T>, K>;\n\n/**\n * Creates a component type where a subset of its props are made optional.\n * @template T - The SolidJS valid component type.\n * @template K - The keys of the component props to make optional.\n */\n/**\n * ReduceComponent type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ReduceComponent<\n  T extends ValidComponent,\n  K extends keyof ComponentProps<T> = never,\n> = Component<OmitPropsOf<T, K> & Partial<PropsOf<T, K>>>;\n\n/**\n * Short alias for {@link ReduceComponent}.\n * @template T - The SolidJS valid component type.\n * @template K - The keys of the component props to make optional.\n */\n/**\n * RC type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type RC<\n  T extends ValidComponent,\n  K extends keyof ComponentProps<T> = never,\n> = ReduceComponent<T, K>;\n\n/**\n * Creates a component type containing only a picked subset of props from another component.\n * @template T - The SolidJS valid component type.\n * @template K - The keys of the component props to pick.\n */\n/**\n * PickComponent type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PickComponent<\n  T extends ValidComponent,\n  K extends keyof ComponentProps<T> = never,\n> = Component<PropsOf<T, K>>;\n\n/**\n * Short alias for {@link PickComponent}.\n * @template T - The SolidJS valid component type.\n * @template K - The keys of the component props to pick.\n */\n/**\n * PiC type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type PiC<\n  T extends ValidComponent,\n  K extends keyof ComponentProps<T> = never,\n> = PickComponent<T, K>;\n\n/**\n * Represents the attributes of a standard HTML link tag.\n */\n/**\n * RootLink type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type RootLink = JSX.HTMLElementTags['link'];\n\n    ",
       "exports": []
     },
-    "ui.atoms.index": {
+    "ui/atoms/index": {
       "imports": [],
       "relativePath": "ui/atoms/index.ts",
       "text": "export {};\n",
       "exports": []
     },
-    "ui.cn.utils": {
+    "ui/cn/components/ui/accordion": {
+      "imports": [
+        {
+          "moduleSpecifier": "../../utils",
+          "kind": "named",
+          "namedImports": ["cn"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "@kobalte/core/accordion",
+          "kind": "named",
+          "namedImports": [
+            "AccordionContentProps",
+            "AccordionItemProps",
+            "AccordionTriggerProps"
+          ],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "@kobalte/core/accordion",
+          "kind": "named",
+          "namedImports": ["Accordion"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "@kobalte/core/polymorphic",
+          "kind": "named",
+          "namedImports": ["PolymorphicProps"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["ParentProps", "ValidComponent", "splitProps"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/cn/components/ui/accordion.tsx",
+      "text": "import { cn } from '../../utils';\nimport type { AccordionContentProps, AccordionItemProps, AccordionTriggerProps } from '@kobalte/core/accordion';\nimport { Accordion } from '@kobalte/core/accordion';\nimport type { PolymorphicProps } from '@kobalte/core/polymorphic';\nimport { ParentProps, ValidComponent, splitProps } from 'solid-js';\n\n/**\n * Accordion component for displaying collapsible content panels.\n * Wrap item components like Accordion.Item, Accordion.Trigger, and Accordion.Content.\n */\n/**\n * Accordion function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function Accordion<T extends ValidComponent = 'div'>(\n  props: Parameters<typeof AccordionPrimitive<T>>[0],\n) {\n  return <AccordionPrimitive {...props} />;\n}\n\n// #region Item\ntype accordionItemProps<T extends ValidComponent = 'div'> =\n  AccordionItemProps<T> & {\n    class?: string;\n  };\n\n/**\n * Represents a single item container within the Accordion.\n */\nconst AccordionItem = <T extends ValidComponent = 'div'>(\n  props: PolymorphicProps<T, accordionItemProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as accordionItemProps, ['class']);\n\n  return (\n    <AccordionPrimitive.Item\n      class={cn('border-b', local.class)}\n      {...rest}\n    />\n  );\n};\n// #endregion\n\n// #region Trigger\ntype accordionTriggerProps<T extends ValidComponent = 'button'> =\n  ParentProps<\n    AccordionTriggerProps<T> & {\n      class?: string;\n    }\n  >;\n\n/**\n * Trigger button to expand/collapse the Accordion item.\n */\nconst AccordionTrigger = <T extends ValidComponent = 'button'>(\n  props: PolymorphicProps<T, accordionTriggerProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as accordionTriggerProps, [\n    'class',\n    'children',\n  ]);\n\n  return (\n    <AccordionPrimitive.Header class='flex' as='div'>\n      <AccordionPrimitive.Trigger\n        class={cn(\n          'flex flex-1 items-center justify-between py-4 text-sm font-medium transition-shadow hover:underline focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring [&[data-expanded]>svg]:rotate-180',\n          local.class,\n        )}\n        {...rest}\n      >\n        {local.children}\n        <svg\n          xmlns='http://www.w3.org/2000/svg'\n          viewBox='0 0 24 24'\n          class='h-4 w-4 text-muted-foreground transition-transform duration-200'\n        >\n          <path\n            fill='none'\n            stroke='currentColor'\n            stroke-linecap='round'\n            stroke-linejoin='round'\n            stroke-width='2'\n            d='m6 9l6 6l6-6'\n          />\n          <title>Arrow</title>\n        </svg>\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  );\n};\n// #endregion\n\n// #region Content\ntype accordionContentProps<T extends ValidComponent = 'div'> = ParentProps<\n  AccordionContentProps<T> & {\n    class?: string;\n  }\n>;\n\n/**\n * Collapsible content container within an Accordion item.\n */\nconst AccordionContent = <T extends ValidComponent = 'div'>(\n  props: PolymorphicProps<T, accordionContentProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as accordionContentProps, [\n    'class',\n    'children',\n  ]);\n\n  return (\n    <AccordionPrimitive.Content\n      class={cn(\n        'animate-accordion-up overflow-hidden text-sm data-expanded:animate-accordion-down',\n        local.class,\n      )}\n      {...rest}\n    >\n      <div class='pb-4 pt-0'>{local.children}</div>\n    </AccordionPrimitive.Content>\n  );\n};\n// #endregion\n\nAccordion.Item = AccordionItem;\nAccordion.Trigger = AccordionTrigger;\nAccordion.Content = AccordionContent;\n\n    ",
+      "exports": []
+    },
+    "ui/cn/components/ui/radio-group": {
+      "imports": [
+        {
+          "moduleSpecifier": "../../utils",
+          "kind": "named",
+          "namedImports": ["cn"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "@kobalte/core/polymorphic",
+          "kind": "named",
+          "namedImports": ["PolymorphicProps"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "@kobalte/core/radio-group",
+          "kind": "named",
+          "namedImports": ["RadioGroupItemControlProps"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "@kobalte/core/radio-group",
+          "kind": "named",
+          "namedImports": ["RadioGroup"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["ValidComponent", "VoidProps"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["splitProps"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/cn/components/ui/radio-group.tsx",
+      "text": "import { cn } from '../../utils';\nimport type { PolymorphicProps } from '@kobalte/core/polymorphic';\nimport type { RadioGroupItemControlProps } from '@kobalte/core/radio-group';\nimport { RadioGroup } from '@kobalte/core/radio-group';\nimport type { ValidComponent, VoidProps } from 'solid-js';\nimport { splitProps } from 'solid-js';\n\n/** Description sub-component for the RadioGroup. */\n/**\n * RadioGroupDescription variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupDescription = RadioGroupPrimitive.Description;\n\n/** Error message sub-component for the RadioGroup validation. */\n/**\n * RadioGroupErrorMessage variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupErrorMessage = RadioGroupPrimitive.ErrorMessage;\n\n/** Description sub-component for a specific RadioGroup Item. */\n/**\n * RadioGroupItemDescription variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemDescription =\n  RadioGroupPrimitive.ItemDescription;\n\n/** Hidden raw input sub-component inside a RadioGroup Item. */\n/**\n * RadioGroupItemInput variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemInput = RadioGroupPrimitive.ItemInput;\n\n/** Text label sub-component for a specific RadioGroup Item. */\n/**\n * RadioGroupItemLabel variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemLabel = RadioGroupPrimitive.ItemLabel;\n\n/** Text label sub-component for the root RadioGroup. */\n/**\n * RadioGroupLabel variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupLabel = RadioGroupPrimitive.Label;\n\n/** Root RadioGroup container component. */\n/**\n * RadioGroup variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroup = RadioGroupPrimitive;\n\n/** Single option item component inside a RadioGroup. */\n/**\n * RadioGroupItem variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItem = RadioGroupPrimitive.Item;\n\ntype radioGroupItemControlProps<T extends ValidComponent = 'div'> =\n  VoidProps<RadioGroupItemControlProps<T> & { class?: string }>;\n\n/**\n * Interactive indicator checkbox/dot control container for the RadioGroup Item.\n */\n/**\n * RadioGroupItemControl variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RadioGroupItemControl = <T extends ValidComponent = 'div'>(\n  props: PolymorphicProps<T, radioGroupItemControlProps<T>>,\n) => {\n  const [local, rest] = splitProps(props as radioGroupItemControlProps, [\n    'class',\n  ]);\n\n  return (\n    <RadioGroupPrimitive.ItemControl\n      class={cn(\n        'flex aspect-square h-4 w-4 items-center justify-center rounded-full border border-primary text-primary shadow transition-shadow focus:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-checked:bg-gray-300',\n        local.class,\n      )}\n      {...rest}\n    >\n      <RadioGroupPrimitive.ItemIndicator class='h-2 w-2 rounded-full data-checked:bg-gray-50' />\n    </RadioGroupPrimitive.ItemControl>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/cn/utils": {
       "imports": [
         {
           "moduleSpecifier": "clsx",
@@ -92,7 +176,7 @@
       "text": "import { clsx, ClassValue } from 'clsx';\nimport { twMerge } from 'tailwind-merge';\n\n/**\n * Merges Tailwind classes and resolves conflicts safely.\n * @param inputs - Array of class names or class condition maps.\n * @returns The combined and resolved class string.\n */\n/**\n * cn function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n\n    ",
       "exports": []
     },
-    "ui.constants.index": {
+    "ui/constants/index": {
       "imports": [],
       "relativePath": "ui/constants/index.ts",
       "text": "export * from './strings';\nexport * from './links';\n",
@@ -111,7 +195,7 @@
         }
       ]
     },
-    "ui.constants.links": {
+    "ui/constants/links": {
       "imports": [
         {
           "moduleSpecifier": "../../types",
@@ -124,13 +208,13 @@
       "text": "import type { RootLink } from '../../types';\n\n/**\n * Standard preconnect links for importing Google Fonts in the application head.\n */\n/**\n * GOOGLE_FONTS_LINKS variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const GOOGLE_FONTS_LINKS: RootLink[] = [\n  {\n    rel: 'preconnect',\n    href: 'https://fonts.gstatic.com',\n    crossorigin: 'anonymous',\n  },\n  {\n    rel: 'preconnect',\n    href: 'https://fonts.googleapis.com',\n    crossorigin: 'anonymous',\n  },\n  {\n    rel: 'preconnect',\n    href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',\n  },\n];\n\n    ",
       "exports": []
     },
-    "ui.constants.strings": {
+    "ui/constants/strings": {
       "imports": [],
       "relativePath": "ui/constants/strings.ts",
       "text": "/**\n * VISIBLE_ESPACE variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const VISIBLE_ESPACE = '\\u200B';\n\n/**\n * Non-breaking space character.\n */\n/**\n * NON_BREAKABLE_SPACE variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const NON_BREAKABLE_SPACE = '\\xa0';\n",
       "exports": []
     },
-    "ui.directives.clickoutside": {
+    "ui/directives/clickoutside": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -143,7 +227,7 @@
       "text": "import { onCleanup } from 'solid-js';\n\n/**\n * SolidJS custom directive that triggers a callback when clicking outside the target element.\n * @param el - The target HTML element.\n * @param accessor - Accessor returning the callback function to run on outside clicks.\n */\n/**\n * clickOutside variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const clickOutside = (\n  el: HTMLElement,\n  accessor: () => (...args: any[]) => void,\n) => {\n  const onClick = (e: MouseEvent) => {\n    // Check if the clicked element is outside the tracked element\n    if (!el.contains(e.target as Node)) accessor()?.();\n  };\n\n  // Add the event listener to the document body\n  document.body.addEventListener('click', onClick);\n\n  // Clean up the event listener when the element is removed from the DOM\n  onCleanup(() => document.body.removeEventListener('click', onClick));\n};\n\n    ",
       "exports": []
     },
-    "ui.directives.index": {
+    "ui/directives/index": {
       "imports": [],
       "relativePath": "ui/directives/index.ts",
       "text": "export * from './clickoutside';\n\n// Déclaration du module pour la directive clickOutside\ndeclare module 'solid-js' {\n  namespace JSX {\n    interface Directives {\n      clickOutside: () => void;\n    }\n  }\n}\n",
@@ -156,13 +240,13 @@
         }
       ]
     },
-    "ui.helpers.base64": {
+    "ui/helpers/base64": {
       "imports": [],
       "relativePath": "ui/helpers/base64.ts",
       "text": "/**\n * convertToBase64 variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const convertToBase64 = (img: HTMLImageElement): string | null => {\n  const canvas = document.createElement('canvas');\n\n  try {\n    const ctx = canvas.getContext('2d');\n    if (!ctx) return null;\n    canvas.width = img.naturalWidth;\n    canvas.height = img.naturalHeight;\n    ctx.drawImage(img, 0, 0);\n\n    // Convertir en base64\n    return canvas.toDataURL('image/png');\n  } catch (error) {\n    console.error('Erreur lors de la conversion en base64:', error);\n    return null;\n  } finally {\n    // Nettoyer le canvas\n    canvas.remove();\n    document.body.removeChild(canvas);\n  }\n};\n",
       "exports": []
     },
-    "ui.helpers.boolean": {
+    "ui/helpers/boolean": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -175,13 +259,13 @@
       "text": "import type { Accessor } from 'solid-js';\n\n/**\n * Resolves a condition (which can be a boolean or a SolidJS accessor returning a boolean) to a concrete boolean value.\n * @param condition - The condition to resolve. Defaults to true if undefined.\n * @returns The resolved boolean value.\n */\n/**\n * buildBoolean variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const buildBoolean = (\n  condition?: Accessor<boolean | undefined> | boolean,\n) => {\n  const _condition =\n    typeof condition === 'function'\n      ? (condition() ?? true)\n      : (condition ?? true);\n  return _condition;\n};\n\n    ",
       "exports": []
     },
-    "ui.helpers.circularDirection": {
+    "ui/helpers/circularDirection": {
       "imports": [],
       "relativePath": "ui/helpers/circularDirection.ts",
       "text": "/**\n * circularDirection variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const circularDirection = (\n  current: number,\n  previous: number,\n  last: number,\n) => {\n  if (current === 0 && previous === last) return 1; // slide droite\n  if (current === last && previous === 0) return -1; // slide gauche\n  return current > previous ? 1 : -1;\n};\n",
       "exports": []
     },
-    "ui.helpers.espace": {
+    "ui/helpers/espace": {
       "imports": [
         {
           "moduleSpecifier": "../constants",
@@ -194,7 +278,7 @@
       "text": "import { NON_BREAKABLE_SPACE, VISIBLE_ESPACE } from '../constants';\n\n/**\n * Returns a zero-width space if the input string is empty, otherwise returns the input string.\n * @param newText - The input text to check.\n * @returns The original string or VISIBLE_ESPACE if empty.\n */\n/**\n * espace variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const espace = (newText: string) => {\n  if (newText === '') {\n    return VISIBLE_ESPACE;\n  }\n  return newText;\n};\n\n/**\n * Generates a repeated sequence of non-breaking spaces.\n * @param count - The number of times to repeat the space. Defaults to 1.\n * @returns The repeated non-breaking space string.\n */\n/**\n * repeatSpace variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const repeatSpace = (count = 1) => {\n  return NON_BREAKABLE_SPACE.repeat(count);\n};\n\n    ",
       "exports": []
     },
-    "ui.helpers.fcc": {
+    "ui/helpers/fcc": {
       "imports": [
         {
           "moduleSpecifier": "color",
@@ -207,7 +291,7 @@
       "text": "import Color from 'color';\n\n/**\n * Calculates a high-contrast foreground color (either 'white' or 'black') for a given background color.\n * @param color - The background color string (CSS-compatible).\n * @returns 'white' or 'black' depending on contrast ratio.\n */\n/**\n * fcc variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const fcc = (color: string) => {\n  const white = Color('white');\n  const _color = Color(color).contrast(white);\n  return _color > 2 ? 'white' : 'black';\n};\n\n    ",
       "exports": []
     },
-    "ui.helpers.index": {
+    "ui/helpers/index": {
       "imports": [],
       "relativePath": "ui/helpers/index.ts",
       "text": "export * from './espace';\nexport * from './fcc';\nexport * from './seo';\nexport * from './boolean';\nexport * from './circularDirection';\nexport * from './base64';\nexport * from './undefinedCall';\n",
@@ -256,13 +340,13 @@
         }
       ]
     },
-    "ui.helpers.seo": {
+    "ui/helpers/seo": {
       "imports": [],
       "relativePath": "ui/helpers/seo.ts",
       "text": "type Props = {\n  /** The page title. */\n  title: string;\n  /** The description meta content. */\n  description?: string;\n  /** The URL of the og/twitter image. */\n  image?: string;\n  /** Keywords for search engines. */\n  keywords?: string;\n};\n\n/**\n * Generates an array of SEO head tag descriptors.\n * @param props - SEO properties containing title, description, keywords, and image URL.\n * @returns Array of metadata properties.\n */\n/**\n * seo variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const seo = ({ title, description, keywords, image }: Props) => {\n  const tags = [\n    { title },\n    { name: 'description', content: description },\n    { name: 'keywords', content: keywords },\n    { name: 'twitter:title', content: title },\n    { name: 'twitter:description', content: description },\n    { name: 'og:type', content: 'website' },\n    { name: 'og:title', content: title },\n    { name: 'og:description', content: description },\n    ...(image\n      ? [\n          { name: 'twitter:image', content: image },\n          { name: 'twitter:card', content: 'summary_large_image' },\n          { name: 'og:image', content: image },\n        ]\n      : []),\n  ];\n\n  return tags;\n};\n",
       "exports": []
     },
-    "ui.helpers.undefinedCall": {
+    "ui/helpers/undefinedCall": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -281,7 +365,7 @@
       "text": "import type { JSX } from 'solid-js';\nimport type { Fn } from '../../types';\n\n/**\n * Extract the event handler from SolidJS JSX camelCase event handlers.\n */\ntype CamelCaseHandler<T> =\n  JSX.CustomEventHandlersCamelCase<T>[keyof JSX.CustomEventHandlersCamelCase<T>];\n\n/**\n * Type definition for the undefinedCall helper.\n */\n/**\n * UndefinedCall_F type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UndefinedCall_F = <T>(\n  fn: CamelCaseHandler<T> | undefined,\n  ...args: Parameters<Extract<typeof fn, Fn>>\n) => ReturnType<Extract<typeof fn, Fn>> | undefined;\n\n/**\n * Safely calls an event handler function if it is defined, otherwise returns undefined.\n * @param fn - The event handler function, or undefined.\n * @param args - The arguments to pass to the function.\n * @returns The result of the function if it was called, otherwise undefined.\n */\n/**\n * undefinedCall variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const undefinedCall: UndefinedCall_F = (fn, ...args) => {\n  if (!fn) return;\n  const _fn: any = fn;\n  const type = typeof _fn;\n  return type === 'function' ? _fn(...args) : undefined;\n};\n\n    ",
       "exports": []
     },
-    "ui.index": {
+    "ui/index": {
       "imports": [],
       "relativePath": "ui/index.ts",
       "text": "export * from './atoms';\nexport * from './constants';\nexport * from './directives';\nexport * from './helpers';\nexport * from './molecules';\nexport * from './organisms';\nexport * from './providers';\nexport * from './signals';\nexport * from '../types';\nexport * from './cn/utils';\n",
@@ -348,13 +432,95 @@
         }
       ]
     },
-    "ui.molecules.Tooltip.constants": {
+    "ui/molecules/AccordionQA": {
+      "imports": [
+        {
+          "moduleSpecifier": "../cn/components/ui/accordion",
+          "kind": "named",
+          "namedImports": ["Accordion"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["For", "Accessor", "Component"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/molecules/AccordionQA.tsx",
+      "text": "import { Accordion } from '../cn/components/ui/accordion';\nimport { For, Accessor, Component } from 'solid-js';\n\n/**\n * Data structure representing a question-answer pair in the accordion list.\n */\n/**\n * AccordionData type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type AccordionData = { question: string; answer: string };\n\n/**\n * Internal single Accordion Item component.\n */\nconst Item: Component<AccordionData & { index: Accessor<number> }> = ({\n  question,\n  answer,\n  index,\n}) => {\n  return (\n    <AccordionD.Item value={`Item - ${index()}`}>\n      <AccordionD.Trigger class='cursor-pointer' children={question} />\n      <AccordionD.Content class='cursor-pointer' children={answer} />\n    </AccordionD.Item>\n  );\n};\n\n/**\n * AccordionQA component displaying a list of collapsible questions and answers.\n * @param props - Object containing data list of question-answer pairs.\n * @returns The rendered Accordion component.\n */\n/**\n * AccordionQA variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const AccordionQA: Component<{ data: AccordionData[] }> = ({\n  data,\n}) => {\n  return (\n    <AccordionD collapsible class='mx-auto min-w-md'>\n      <For\n        each={data}\n        children={(data, index) => {\n          const props = { ...data, index };\n          return <Item {...props} />;\n        }}\n      />\n    </AccordionD>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/molecules/Counter": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["Accessor", "Component"],
+          "isTypeOnly": true
+        }
+      ],
+      "relativePath": "ui/molecules/Counter.tsx",
+      "text": "import type { Accessor, Component } from 'solid-js';\n\n/**\n * Simple button-based Counter component displaying a label and click count.\n * @param props - Object containing onClick callback, count accessor, and display label.\n * @returns The rendered JSX button element.\n */\n/**\n * Counter variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const Counter: Component<{\n  onClick: () => void;\n  count: Accessor<number>;\n  label: string;\n}> = ({ onClick, label, count }) => {\n  return (\n    <button\n      class='px-5 py-3 bg-blue-200 text-blue-800 rounded-2xl border-2 border-gray-900 outline-none cursor-pointer focus:border-blue-600 active:bg-gray-200'\n      onClick={onClick}\n      type='button'\n    >\n      {`${label}${count()}`}\n    </button>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/molecules/FadingDots": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["splitProps", "Component", "JSX"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../../types",
+          "kind": "named",
+          "namedImports": ["OmitPropsOf"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "../cn/utils",
+          "kind": "named",
+          "namedImports": ["cn"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/molecules/FadingDots.tsx",
+      "text": "import { splitProps, Component, JSX } from 'solid-js';\nimport type { OmitPropsOf } from '../../types';\nimport { cn } from '../cn/utils';\n\n/**\n * FadingDots loader/indicator component displaying a set of animated fading dot indicators.\n * @param props - Object containing dot count, animation duration, and styling props for the dots.\n * @returns The rendered fading dots wrapper.\n */\n/**\n * FadingDots variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const FadingDots: Component<{\n  count: number;\n  duration?: number;\n  innerProps?: OmitPropsOf<'span', 'children' | 'style'> & {\n    style?: JSX.CSSProperties;\n  };\n}> = ({ count: length, innerProps = {}, duration = 500 }) => {\n  const [local, rest] = splitProps(innerProps, ['class', 'style']);\n\n  return (\n    <div class='flex items-center justify-center space-x-4 mt-4'>\n      {Array.from({ length }, (_, i) => (\n        <span\n          class={cn(\n            'rounded-full animate-out direction-alternate repeat-infinite fade-out-5 size-4  bg-gray-600',\n            local.class,\n          )}\n          style={{\n            ...local.style,\n            'animation-duration': `${duration}ms`,\n            'animation-delay': `${duration / i}ms`,\n          }}\n          aria-hidden='true'\n          {...rest}\n        />\n      ))}\n    </div>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/molecules/MultiText": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["splitProps"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../../types",
+          "kind": "named",
+          "namedImports": ["OmitPropsOf"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "../cn/utils",
+          "kind": "named",
+          "namedImports": ["cn"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/molecules/MultiText.tsx",
+      "text": "import { splitProps } from 'solid-js';\nimport type { OmitPropsOf } from '../../types';\nimport { cn } from '../cn/utils';\n\n/**\n * Properties for the MultiText component.\n */\ntype Props<T extends string[]> = {\n  /** Array of text snippets to display inside individual span tags. */\n  texts: T;\n  /** Custom options/props for each individual text span index. */\n  props?: {\n    [K in Extract<keyof T, `${number}`>]?: OmitPropsOf<'span', 'children'>;\n  };\n} & OmitPropsOf<'span', 'children'>;\n\n/**\n * Renders multiple inline span elements sequentially, wrapping them in a single parent span.\n * @param props - Configuration properties containing the texts, inner span properties, and outer span wrapper styling.\n * @returns The rendered JSX element.\n */\n/**\n * MultiText variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const MultiText = <const T extends string[]>({\n  texts,\n  props: _props,\n  ...rest\n}: Props<T>) => {\n  const [local, all] = splitProps(rest, ['class']);\n\n  return (\n    <span {...all} class={cn('inline!', local.class)}>\n      {texts.map((text, index) => {\n        const props = { ...(_props as any)?.[index] };\n        return <span {...props}>{text}</span>;\n      })}\n    </span>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/molecules/Tooltip.constants": {
       "imports": [],
       "relativePath": "ui/molecules/Tooltip.constants.ts",
       "text": "/**\n * POSITIONS variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const POSITIONS = [\n  'top',\n  'bottom',\n  'left',\n  'right',\n  'top-left',\n  'top-right',\n  'bottom-left',\n  'bottom-right',\n  'viewport-relative',\n] as const;\n",
       "exports": []
     },
-    "ui.molecules.Tooltip.helpers": {
+    "ui/molecules/Tooltip.helpers": {
       "imports": [
         {
           "moduleSpecifier": "./Tooltip.types",
@@ -367,7 +533,7 @@
       "text": "import type { Position } from './Tooltip.types';\n\n/**\n * Resolves the CSS Tailwind classes for positioning a tooltip relative to its parent element.\n * @param position - The preferred position. Defaults to 'top'.\n * @param computedPosition - Fallback/computed screen position ('top' or 'bottom') if layout-flipping is required.\n * @returns CSS class string.\n */\n/**\n * getPositionClass variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const getPositionClass = (\n  position: Position = 'top',\n  computedPosition?: 'top' | 'bottom',\n) => {\n  const positions: Record<Position, string> = {\n    top: 'bottom-full left-1/2 -translate-x-1/2 -translate-y-2',\n    bottom: 'top-full left-1/2 -translate-x-1/2 translate-y-2',\n    left: 'right-full top-1/2 -translate-y-1/2 -translate-x-2',\n    right: 'left-full top-1/2 -translate-y-1/2 translate-x-2',\n    'top-left': 'bottom-full right-0 -translate-y-2',\n    'top-right': 'bottom-full left-0 -translate-y-2',\n    'bottom-left': 'top-full right-0 translate-y-2',\n    'bottom-right': 'top-full left-0 translate-y-2',\n    'viewport-relative':\n      computedPosition === 'bottom'\n        ? 'top-full left-1/2 -translate-x-1/2 translate-y-2'\n        : 'bottom-full left-1/2 -translate-x-1/2 -translate-y-2',\n  };\n\n  return positions[position];\n};\n\n    ",
       "exports": []
     },
-    "ui.molecules.Tooltip.hook": {
+    "ui/molecules/Tooltip.hook": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -404,7 +570,38 @@
       "text": "import { createMemo, createSignal, splitProps } from 'solid-js';\nimport type { ToolTipProps } from './Tooltip.types';\nimport { undefinedCall } from '../helpers';\nimport type { PropsOf } from '../../types';\nimport { getPositionClass } from './Tooltip.helpers';\n\ntype PropsHandlers = PropsOf<\n  'div',\n  'onMouseOver' | 'onMouseOut' | 'onFocus' | 'onBlur'\n>;\n\ntype ExtractFn<T extends keyof PropsHandlers> = (\n  e: Parameters<Extract<PropsHandlers[T], (...args: any) => any>>[0],\n) => any;\n\n/**\n * Custom hook managing the visibility, timing, positioning, and event handlers for the Tooltip component.\n * @param props - Tooltip properties like show/hide delay and positioning preference.\n * @returns State accessors, computed styles, ref setters, and event handlers.\n */\n/**\n * useHook variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const useHook = (\n  props: Omit<ToolTipProps, 'children' | 'tooltip'>,\n) => {\n  let timeoutShow: ReturnType<typeof setTimeout>;\n  let timeoutHide: ReturnType<typeof setTimeout>;\n  const [containerRef, setContainerRef] = createSignal<HTMLDivElement>();\n\n  const [isVisible, setIsVisible] = createSignal(false);\n  const [computedPosition, setComputedPosition] = createSignal<\n    'top' | 'bottom'\n  >('top');\n\n  const position = props.position || 'viewport-relative';\n\n  const showTooltip = () => {\n    if (timeoutHide) clearTimeout(timeoutHide);\n    const container = containerRef();\n\n    // Calculate position for viewport-relative\n    if (position === 'viewport-relative' && container) {\n      const rect = container.getBoundingClientRect();\n      const viewportHeight = window.innerHeight;\n      const spaceAbove = rect.top;\n      const spaceBelow = viewportHeight - rect.bottom;\n\n      // Default to top, but switch to bottom if not enough space above\n      setComputedPosition(\n        spaceAbove < 100 && spaceBelow > spaceAbove ? 'bottom' : 'top',\n      );\n    }\n\n    timeoutShow = setTimeout(() => {\n      setIsVisible(true);\n    }, props.showDelay ?? 500);\n  };\n\n  const hideTooltip = () => {\n    if (timeoutShow) clearTimeout(timeoutShow);\n    timeoutHide = setTimeout(() => {\n      setIsVisible(false);\n    }, props.hideDelay ?? 200);\n  };\n\n  const [_handlers, local] = splitProps(props, [\n    'onMouseOver',\n    'onMouseOut',\n    'onFocus',\n    'onBlur',\n  ]);\n\n  const onMouseOver: ExtractFn<'onMouseOver'> = e => {\n    showTooltip();\n    return undefinedCall(_handlers.onMouseOver, e);\n  };\n\n  const onMouseOut: ExtractFn<'onMouseOut'> = e => {\n    hideTooltip();\n    return undefinedCall(_handlers.onMouseOut, e);\n  };\n\n  const onFocus: ExtractFn<'onFocus'> = e => {\n    showTooltip();\n    return undefinedCall(_handlers.onFocus, e);\n  };\n\n  const onBlur: ExtractFn<'onBlur'> = e => {\n    hideTooltip();\n    return undefinedCall(_handlers.onBlur, e);\n  };\n\n  const positionClass = createMemo(() =>\n    getPositionClass(position, computedPosition()),\n  );\n\n  const handlers = {\n    onMouseOver,\n    onMouseOut,\n    onFocus,\n    onBlur,\n  };\n\n  return {\n    isVisible,\n    positionClass,\n    setContainerRef,\n    handlers,\n    local,\n  };\n};\n\n    ",
       "exports": []
     },
-    "ui.molecules.Tooltip.types": {
+    "ui/molecules/Tooltip": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["Component"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../cn/utils",
+          "kind": "named",
+          "namedImports": ["cn"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./Tooltip.hook",
+          "kind": "named",
+          "namedImports": ["useHook"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "./Tooltip.types",
+          "kind": "named",
+          "namedImports": ["ToolTipProps"],
+          "isTypeOnly": true
+        }
+      ],
+      "relativePath": "ui/molecules/Tooltip.tsx",
+      "text": "import { Component } from 'solid-js';\nimport { cn } from '../cn/utils';\nimport { useHook } from './Tooltip.hook';\nimport type { ToolTipProps } from './Tooltip.types';\n\n/**\n * ToolTip component that displays a tooltip overlay on hover, focus, or custom interaction.\n * @param props - Tooltip properties including tooltip content, placement preference, and trigger delays.\n * @returns The rendered tooltipped component container.\n */\n/**\n * ToolTip variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const ToolTip: Component<ToolTipProps> = props => {\n  const { isVisible, positionClass, setContainerRef, handlers, local } =\n    useHook(props);\n\n  return (\n    <div\n      {...local}\n      ref={setContainerRef}\n      class={cn('relative', local.class)}\n      {...handlers}\n    >\n      {props.children}\n      <div\n        class={cn(\n          'absolute z-50 px-2 py-1 text-sm text-white bg-black rounded-md shadow-lg whitespace-nowrap transition-opacity duration-200',\n          positionClass(),\n          isVisible()\n            ? 'opacity-100 pointer-events-auto'\n            : 'opacity-0 pointer-events-none',\n        )}\n      >\n        {props.tooltip}\n      </div>\n    </div>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/molecules/Tooltip.types": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -429,7 +626,57 @@
       "text": "import type { JSX } from 'solid-js';\nimport type { POSITIONS } from './Tooltip.constants';\nimport type { OmitPropsOf } from '../../types';\n\n/**\n * Allowed positions for the tooltip relative to the target element.\n */\n/**\n * Position type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Position = (typeof POSITIONS)[number];\n\n/**\n * Properties for the Tooltip component.\n */\n/**\n * ToolTipProps type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ToolTipProps = {\n  /** The content of the tooltip (JSX element or string). */\n  tooltip: JSX.Element;\n  /** Delay in milliseconds before showing the tooltip. */\n  showDelay?: number;\n  /** Delay in milliseconds before hiding the tooltip. */\n  hideDelay?: number;\n  /** The tooltip placement relative to the element. Defaults to 'top'. */\n  position?: Position;\n} & OmitPropsOf<'div'>;\n\n    ",
       "exports": []
     },
-    "ui.molecules.index": {
+    "ui/molecules/TypingText": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": [
+            "createEffect",
+            "createMemo",
+            "on",
+            "Accessor",
+            "Component"
+          ],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../signals/createTyping",
+          "kind": "named",
+          "namedImports": ["createTyping"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../constants",
+          "kind": "named",
+          "namedImports": ["VISIBLE_ESPACE"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/molecules/TypingText.tsx",
+      "text": "import { createEffect, createMemo, on, Accessor, Component } from 'solid-js';\nimport { createTyping } from '../signals/createTyping';\nimport { VISIBLE_ESPACE } from '../constants';\n\n/**\n * Base properties for the TypingText component.\n */\ntype BaseProps = {\n  /** The text content to display using typing animation. */\n  children: string;\n  /** Custom CSS classes. */\n  class?: string;\n  /** Base typing interval speed in milliseconds. */\n  interval?: number;\n  /** Accessor to programmatically disable/bypass the typing animation. */\n  disabled?: Accessor<boolean>;\n};\n\n/**\n * Union types for conditional rewind properties.\n */\ntype Props = BaseProps &\n  (\n    | {\n        rewind: true;\n        rewindDelay: number;\n      }\n    | { rewind?: false }\n  );\n\n/**\n * Component that animates typing of the text passed as children.\n * @param props - Custom options like interval speed, rewind loop mode, or disabled states.\n * @returns The rendered animated text container.\n */\n/**\n * TypingText variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const TypingText: Component<Props> = props => {\n  // #region Default values\n  const min = props.interval ?? 62;\n  const rewind = props.rewind ?? false;\n  const rewindDelay = (props as any).rewindDelay ?? 500;\n  const content = props.children;\n  const disabled = createMemo(\n    () => (props.disabled ? props.disabled() : false),\n    false,\n  );\n  // #endregion\n\n  const { text, type, setText } = createTyping({\n    content,\n    min,\n    rewind,\n    rewindDelay,\n  });\n\n  createEffect(on(disabled, () => setText(VISIBLE_ESPACE)));\n\n  createEffect(() => {\n    // If disabled, show full text immediately\n    if (disabled()) setText(content);\n    else type();\n  });\n\n  return <div class={props.class}>{text()}</div>;\n};\n\n    ",
+      "exports": []
+    },
+    "ui/molecules/focus": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": [
+            "createSignal",
+            "onMount",
+            "Component",
+            "ComponentProps",
+            "ValidComponent"
+          ],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/molecules/focus.tsx",
+      "text": "import { createSignal, onMount, Component, ComponentProps, ValidComponent } from 'solid-js';\n\n/**\n * Callback function to check if the component should acquire focus.\n * @template T - The type of valid component.\n * @param props - The props of the component.\n * @returns Boolean indicating if focus should be set.\n */\ntype FocusFn<T extends ValidComponent> = (\n  props: ComponentProps<T>,\n) => boolean;\n\nfunction _focus<T extends Component<any>>(children: T, focus: FocusFn<T>) {\n  const Out = (props => {\n    const [ref, setRef] = createSignal<HTMLElement | null>(null);\n\n    onMount(() => {\n      if (focus(props)) ref()?.focus();\n    });\n\n    const Compt = children;\n\n    return <Compt {...props} ref={setRef} />;\n  }) as T;\n\n  return Out;\n}\n\nfunction _forwardFocus<T2 extends ValidComponent>(focus: FocusFn<T2>) {\n  return <T extends ComponentProps<T2>>(Compt: Component<T>) =>\n    _focus(Compt, focus as any);\n}\n\n/**\n * Creates a function that wraps a component to automatically focus it based on a condition.\n * @template T2 - The target component type.\n * @param focus - Function determining whether to focus the element.\n * @returns A HOC function wrapping the component.\n */\n/**\n * forwardFocus function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function forwardFocus<T2 extends ValidComponent>(\n  focus: FocusFn<T2>,\n): <T extends ComponentProps<T2>>(Compt: Component<T>) => Component<T>;\n\n/**\n * Wraps a component to automatically focus it when mounted based on a condition.\n * @template T2 - The target component type.\n * @param children - The component to wrap.\n * @param focus - Function determining whether to focus the element.\n * @returns The wrapped component.\n */\n/**\n * forwardFocus function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function forwardFocus<T2 extends Component<any>>(\n  children: T2,\n  focus: FocusFn<T2>,\n): T2;\n\n/**\n * Implementation of forwardFocus supporting both direct component wrapping and curried HOC options.\n */\n/**\n * forwardFocus function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function forwardFocus<T2 extends ValidComponent>(\n  arg1: any,\n  arg2?: FocusFn<T2>,\n) {\n  return arg2\n    ? _focus(arg1 as any, arg2)\n    : _forwardFocus(arg1 as FocusFn<T2>);\n}\n\n    ",
+      "exports": []
+    },
+    "ui/molecules/index": {
       "imports": [],
       "relativePath": "ui/molecules/index.ts",
       "text": "export * from './AccordionQA';\nexport * from './Counter';\nexport * from './FadingDots';\nexport * from './focus';\nexport * from './MultiText';\nexport * from './reducer';\nexport * from './Tooltip';\nexport * from './TypingText';\n",
@@ -484,7 +731,7 @@
         }
       ]
     },
-    "ui.molecules.reducer": {
+    "ui/molecules/reducer": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -503,7 +750,69 @@
       "text": "import { Component, ComponentProps } from 'solid-js';\nimport type { RC } from '../../types';\n\n/**\n * Reduces a component by pre-applying a set of default properties.\n * @template T - The original component type.\n * @template K - The type of props to pre-apply.\n * @template Keys - The keys of the pre-applied props.\n * @param Compt - The component to reduce.\n * @param props1 - The default props to pre-apply.\n * @returns The reduced component with pre-applied props made optional.\n */\n/**\n * reduceComponent variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const reduceComponent = <\n  const T extends Component<any>,\n  K extends Partial<ComponentProps<T>> = never,\n  Keys extends keyof ComponentProps<T> =\n    keyof K extends keyof ComponentProps<T> ? keyof K : never,\n>(\n  Compt: T,\n  props1?: K,\n) => {\n  const out: RC<T, Keys> = props2 => {\n    const props = { ...props1, ...props2 };\n    return Compt(props);\n  };\n\n  return out;\n};\n\n    ",
       "exports": []
     },
-    "ui.organisms.index": {
+    "ui/organisms/HeadLinks": {
+      "imports": [
+        {
+          "moduleSpecifier": "@tanstack/solid-router",
+          "kind": "named",
+          "namedImports": ["Link"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["For", "Component"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../signals/links",
+          "kind": "named",
+          "namedImports": ["createLinks", "formatLabel1"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../../types",
+          "kind": "named",
+          "namedImports": ["PropsOf"],
+          "isTypeOnly": true
+        }
+      ],
+      "relativePath": "ui/organisms/HeadLinks.tsx",
+      "text": "import { Link } from '@tanstack/solid-router';\nimport { For, Component } from 'solid-js';\nimport { createLinks, formatLabel1 } from '../signals/links';\nimport type { PropsOf } from '../../types';\n\n/**\n * Properties for individual navigation links.\n */\ntype LinkProps = Omit<\n  ReturnType<typeof createLinks>[number],\n  'children' | 'search'\n> &\n  Partial<Pick<ReturnType<typeof createLinks>[number], 'search'>> &\n  PropsOf<typeof _Link, 'children'>;\n\n/**\n * Single navigation Link wrapper component connecting to TanStack Router.\n */\nconst Link: Component<LinkProps> = ({\n  children,\n  to,\n  search = () => undefined,\n}) => {\n  return (\n    <_Link\n      to={to}\n      search={search()}\n      class={'text-gray-400 hover:underline hover:scale-105'}\n      activeProps={{\n        class:\n          'text-yellow-900 font-semibold hover:no-underline! hover:scale-100! cursor-default text-xl',\n      }}\n    >\n      {children}\n    </_Link>\n  );\n};\n\n/**\n * HeadLinks component that renders a header navigation bar with parsed routing links.\n * @returns The rendered header navigation component.\n */\n/**\n * HeadLinks variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const HeadLinks: Component = () => {\n  const LINKS = createLinks({\n    filter: value => value === '/projects' || !value.includes('projects'),\n    formatLabel,\n  });\n\n  return (\n    <header class='p-2 flex gap-2 text-lg justify-center w-full space-x-2'>\n      <For each={LINKS} children={Link} />\n    </header>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/organisms/LoadingFallback": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["Component"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "../molecules/TypingText",
+          "kind": "named",
+          "namedImports": ["TypingText"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../cn/utils",
+          "kind": "named",
+          "namedImports": ["cn"],
+          "isTypeOnly": false
+        },
+        {
+          "moduleSpecifier": "../molecules/FadingDots",
+          "kind": "named",
+          "namedImports": ["FadingDots"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/organisms/LoadingFallback.tsx",
+      "text": "import type { Component } from 'solid-js';\nimport { TypingText } from '../molecules/TypingText';\nimport { cn } from '../cn/utils';\nimport { FadingDots } from '../molecules/FadingDots';\n\ninterface LoadingFallbackProps {\n  /**\n   * Texte à afficher pendant le chargement\n   * @default \"Chargement en cours...\"\n   */\n  message?: string;\n  /**\n   * Classes CSS supplémentaires\n   */\n  class?: string;\n  /**\n   * Taille du spinner\n   * @default \"lg\"\n   */\n  size?: 'sm' | 'md' | 'lg' | 'xl';\n}\n\n/**\n * LoadingFallback - Composant de fallback avec spinner et texte animé\n *\n * Affiche un spinner animé accompagné d'un texte avec effet de typing\n * pour améliorer l'expérience utilisateur pendant les chargements.\n *\n * @example\n * ```tsx\n * <Show when={data()} fallback={<LoadingFallback />}>\n *   <DataComponent data={data()!} />\n * </Show>\n * ```\n */\n/**\n * LoadingFallback variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const LoadingFallback: Component<LoadingFallbackProps> = props => {\n  const message = props.message ?? 'Chargement en cours...';\n\n  const spinnerSizes = {\n    sm: 'w-8 h-8',\n    md: 'w-12 h-12',\n    lg: 'w-16 h-16',\n    xl: 'w-24 h-24',\n  };\n\n  const size = props.size ?? 'lg';\n\n  return (\n    <div\n      class={cn(\n        'flex flex-col items-center justify-center gap-6',\n        'h-screen w-screen overflow-hidden p-4',\n        props.class,\n      )}\n      role='status'\n      aria-live='polite'\n      aria-label='Chargement en cours'\n    >\n      {/* Spinner animé */}\n      <div class='relative'>\n        {/* Cercle extérieur avec rotation */}\n        <div\n          class={cn(\n            spinnerSizes[size],\n            'rounded-full border-4 border-[#4B9CAD]/20',\n            'animate-spin',\n            'border-t-[#4B9CAD]',\n          )}\n          aria-hidden='true'\n        />\n\n        {/* Cercle intérieur pour effet de profondeur */}\n        <div\n          class={cn(\n            'absolute inset-2',\n            'rounded-full border-4 border-transparent',\n            'border-b-[#4B9CAD]/40',\n            'animate-spin',\n            'animation-duration-[1.5s]',\n            'direction-[reverse]',\n          )}\n          aria-hidden='true'\n        />\n      </div>\n\n      {/* Texte avec effet typing */}\n      <div class='text-center' aria-label={message}>\n        <TypingText\n          class='text-lg md:text-xl font-medium text-gray-700 dark:text-gray-300'\n          interval={80}\n          rewind={true}\n          rewindDelay={2000}\n        >\n          {message}\n        </TypingText>\n\n        {/* Points d'animation pour indiquer le chargement */}\n        <FadingDots\n          count={5}\n          innerProps={{\n            class: 'bg-[#3d8091]',\n          }}\n        />\n      </div>\n    </div>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/organisms/index": {
       "imports": [],
       "relativePath": "ui/organisms/index.ts",
       "text": "export * from './HeadLinks';\nexport * from './LoadingFallback';\n",
@@ -522,7 +831,7 @@
         }
       ]
     },
-    "ui.providers.index": {
+    "ui/providers/index": {
       "imports": [],
       "relativePath": "ui/providers/index.ts",
       "text": "export * from './ressource';\n",
@@ -535,7 +844,26 @@
         }
       ]
     },
-    "ui.signals.circular": {
+    "ui/providers/ressource": {
+      "imports": [
+        {
+          "moduleSpecifier": "solid-js",
+          "kind": "named",
+          "namedImports": ["ParentComponent"],
+          "isTypeOnly": true
+        },
+        {
+          "moduleSpecifier": "../signals",
+          "kind": "named",
+          "namedImports": ["createResourceContext", "ResourceContext"],
+          "isTypeOnly": false
+        }
+      ],
+      "relativePath": "ui/providers/ressource.tsx",
+      "text": "import type { ParentComponent } from 'solid-js';\nimport { createResourceContext, ResourceContext } from '../signals';\n\n/**\n * Provider component for resource context\n *\n * Wrap your application with this component to provide\n * resource management capabilities to all child components.\n *\n * @example\n * ```tsx\n * import { ResourceProvider } from '@bemedev/tansolid/signals';\n *\n * export default function Root() {\n *   return (\n *     <ResourceProvider>\n *       <Router />\n *     </ResourceProvider>\n *   );\n * }\n * ```\n */\n/**\n * RessourcesProvider variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const RessourcesProvider: ParentComponent = props => {\n  const value = createResourceContext();\n\n  return (\n    <ResourceContext.Provider value={value}>\n      {props.children}\n    </ResourceContext.Provider>\n  );\n};\n\n    ",
+      "exports": []
+    },
+    "ui/signals/circular": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -554,7 +882,7 @@
       "text": "import { createSignal } from 'solid-js';\nimport { circularDirection } from '../helpers';\n\n/**\n * Creates a signal state for circular navigation, tracking current index and animation direction.\n * @param last - The maximum boundary index (inclusive).\n * @param index - The initial index. Defaults to 0.\n * @returns An object containing the current state accessors, setter, and navigation helpers (next, prev, effect).\n */\n/**\n * createCircular variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createCircular = (last: number, index = 0) => {\n  const [direction, setDirection] = createSignal<1 | -1>(1);\n  const [current, setCurrent] = createSignal(index);\n\n  const effect = (index: number) => {\n    const _direction = circularDirection(index, current(), last);\n    setDirection(_direction);\n    setCurrent(index);\n  };\n\n  const next = () => {\n    effect((current() + 1) % (last + 1));\n  };\n\n  const prev = () => {\n    effect((current() - 1 + (last + 1)) % (last + 1));\n  };\n\n  return {\n    direction,\n    current,\n    setCurrent,\n    next,\n    prev,\n    effect,\n  };\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.counter": {
+    "ui/signals/counter": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -567,7 +895,7 @@
       "text": "import { createSignal } from 'solid-js';\n\n/**\n * Creates a counter signal with increment, decrement, and custom stepping/setting functions.\n * @param intitial - The initial counter value. Defaults to 0.\n * @returns An object containing count signal and updater methods.\n */\n/**\n * createCounter variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createCounter = (intitial = 0) => {\n  const [count, _setCount] = createSignal(intitial);\n\n  const setCount = (num = 0) => {\n    return () => _setCount(num);\n  };\n\n  const incrementFn = (num = 1) => {\n    return () => _setCount(v => v + num);\n  };\n  const increment = incrementFn();\n\n  const decrementFn = (num = 1) => {\n    return () => _setCount(v => v - num);\n  };\n  const decrement = decrementFn();\n\n  return {\n    count,\n    decrement,\n    increment,\n    incrementFn,\n    decrementFn,\n    setCount,\n  };\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.createTyping": {
+    "ui/signals/createTyping": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -592,7 +920,7 @@
       "text": "import { createSignal, onCleanup } from 'solid-js';\nimport { VISIBLE_ESPACE } from '../constants';\nimport { espace } from '../helpers/espace';\n\n/**\n * Properties for the typing animation signal.\n */\ntype Props = {\n  /** The text content to type out. */\n  content: string;\n  /** The base typing interval in milliseconds. */\n  min: number;\n  /** Whether the typing should delete itself and loop. Defaults to false. */\n  rewind?: boolean;\n  /** Delay before rewinding or typing again in milliseconds. Defaults to 500. */\n  rewindDelay?: number;\n};\n\n/**\n * Creates a typing animation effect with text signals and state.\n * @param props - Configuration including content, typing speed boundaries, and rewind behavior.\n * @returns An object containing the current text signal, type trigger function, and manual setter.\n */\n/**\n * createTyping variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createTyping = ({ content, min, ...props }: Props) => {\n  const rewind = props.rewind ?? false;\n  const rewindDelay = (props as any).rewindDelay ?? 500;\n\n  const OSCILLATION = Math.min(min / 10 + content.length / 10, 10);\n\n  const [text, setText] = createSignal(VISIBLE_ESPACE);\n  let timeoutId: number | NodeJS.Timeout;\n  let index = 0;\n  let isTyping = true;\n  const max = min + OSCILLATION;\n  let interval = min;\n  let intervalDirection = 1; // 1 for incrementing, -1 for decrementing\n\n  const type = () => {\n    if (isTyping) {\n      if (index < content.length) {\n        setText(prev => prev + content[index]);\n        index++;\n        timeoutId = setTimeout(type, interval);\n      } else if (rewind) {\n        isTyping = false;\n        // interval = min;\n        intervalDirection = 1;\n        timeoutId = setTimeout(type, rewindDelay);\n      }\n    } else {\n      // Rewind mode\n      if (index > 0) {\n        index--;\n        setText(espace(content.substring(0, index)));\n        timeoutId = setTimeout(type, interval);\n      } else {\n        isTyping = true;\n        // interval = min;\n        intervalDirection = 1;\n        timeoutId = setTimeout(type, rewindDelay);\n      }\n    }\n\n    // Update interval with oscillation\n    interval += intervalDirection;\n\n    if (interval >= max) {\n      intervalDirection = -1;\n    } else if (interval <= min) {\n      intervalDirection = 1;\n    }\n  };\n\n  onCleanup(() => {\n    if (timeoutId !== undefined) clearTimeout(timeoutId);\n  });\n\n  return { text, type, setText };\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.debounce": {
+    "ui/signals/debounce": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -605,7 +933,7 @@
       "text": "import { createSignal, Accessor, Setter } from 'solid-js';\n\n/**\n * Creates a debounced version of a function that delays execution until after `ms` milliseconds have elapsed since the last call.\n * @template T - The type of argument passed to the function.\n * @param action - The function to debounce.\n * @param ms - The delay in milliseconds. Defaults to 1000.\n * @returns A debounced function with a `.cancel()` method to cancel pending execution.\n */\n/**\n * createDebounce function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function createDebounce<T>(action: (arg: T) => void, ms = 1000) {\n  let timerHandle: NodeJS.Timeout;\n\n  const debounce = (value: T) => {\n    clearTimeout(timerHandle);\n    timerHandle = setTimeout(() => action(value), ms);\n  };\n  debounce.cancel = () => clearTimeout(timerHandle);\n\n  return debounce;\n}\n\n/**\n * Options for creating a debounced signal.\n */\ntype Options<T> = {\n  /** The debounce delay in milliseconds. */\n  ms?: number;\n  /** Action callback triggered when value is resolved. */\n  action?: (value: T) => void;\n  /** Optional temporary ending state value to toggle back to after debounce. */\n  end?: T;\n};\n\n/**\n * Creates a debounced signal that reverts to a start state after debouncing.\n * @template T - The type of the signal value.\n * @param start - The starting state.\n * @param options - Configuration containing delay, action, and the temporary 'end' state.\n * @returns A tuple of accessor and triggering function.\n */\n/**\n * createDebounceSignal function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function createDebounceSignal<T>(\n  start: T,\n  options: Omit<Options<T>, 'end'> & Required<Pick<Options<T>, 'end'>>,\n): readonly [\n  Accessor<T>,\n  {\n    (): void;\n    cancel: () => void;\n  },\n];\n\n/**\n * Creates a debounced signal.\n * @template T - The type of the signal value.\n * @param start - The starting state.\n * @param options - Configuration containing delay and action callback.\n * @returns A tuple of accessor, trigger function, and manual setter.\n */\n/**\n * createDebounceSignal function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function createDebounceSignal<T>(\n  start: T,\n  options?: Omit<Options<T>, 'end'>,\n): readonly [\n  Accessor<T>,\n  {\n    (value: T): void;\n    cancel: () => void;\n  },\n  setter: Setter<T>,\n];\n\n/**\n * Implementation of createDebounceSignal.\n */\n/**\n * createDebounceSignal function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function createDebounceSignal<T>(start: T, options?: Options<T>) {\n  const { ms = 500, action, end } = options ?? {};\n  const [signal, _setSignal] = createSignal(start);\n\n  const setSignal = (value: T) => {\n    if (action) {\n      action(value);\n    }\n\n    _setSignal(value as any);\n  };\n\n  const debounce = createDebounce<T>(setSignal, ms);\n\n  if (end) {\n    const debounce2 = () => {\n      setSignal(end as any);\n      debounce(start);\n    };\n    debounce2.cancel = debounce.cancel;\n\n    return [signal, debounce2] as any;\n  }\n\n  return [signal, debounce, setSignal] as any;\n}\n\n/**\n * Short alias for {@link createDebounceSignal}.\n */\n/**\n * cds variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const cds = createDebounceSignal;\n\n/**\n * Creates a debounced boolean signal that toggles and then reverts back to the initial value.\n * @param args - Configuration options including initial state, delay, and action callback.\n * @returns A debounced signal tuple.\n */\n/**\n * toggleDebounceBool variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const toggleDebounceBool = (\n  args?: { initial?: boolean } & Omit<Options<boolean>, 'end'>,\n) => {\n  const { ms = 500, initial = true, action } = args ?? {};\n  return cds(initial, { ms, end: !initial, action });\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.focus": {
+    "ui/signals/focus": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -618,7 +946,7 @@
       "text": "import { createSignal } from 'solid-js';\n\n/**\n * Global signal representing the ID or name of the currently focused element.\n */\n/**\n * const variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const [toFocus, setFocus] = createSignal<string | undefined>(\n  undefined,\n);\n\n    ",
       "exports": []
     },
-    "ui.signals.index": {
+    "ui/signals/index": {
       "imports": [],
       "relativePath": "ui/signals/index.ts",
       "text": "export * from './circular';\nexport * from './counter';\nexport * from './createTyping';\nexport * from './debounce';\nexport * from './focus';\nexport * from './intersect';\nexport * from './lang';\nexport * from './links';\nexport * from './ressource';\nexport * from './scroll';\nexport * from './sleep';\n",
@@ -691,7 +1019,7 @@
         }
       ]
     },
-    "ui.signals.intersect": {
+    "ui/signals/intersect": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -709,7 +1037,7 @@
       "text": "import { createDeferred, createSignal, onCleanup, onMount } from 'solid-js';\n\n/**\n * Crée un signal d'intersection qui détecte quand un élément entre dans le viewport.\n * Utilise l'API IntersectionObserver pour surveiller la visibilité d'un élément.\n *\n * @param options - Options de configuration pour l'IntersectionObserver\n * @param options.threshold - Pourcentage de visibilité nécessaire pour déclencher l'intersection (par défaut: 0.1)\n * @param options.root - Élément racine utilisé comme viewport (par défaut: viewport du navigateur)\n * @param options.rootMargin - Marge autour de l'élément racine\n * @returns Un tuple contenant:\n *   - [0] `intersecting`: Signal différé indiquant si l'élément est visible\n *   - [1] `setRef`: Fonction à passer comme ref à l'élément HTML à observer\n *\n * @example\n * ```tsx\n * const [visible, setRef] = createIntersect({ threshold: 0.5 });\n *\n * return (\n *   <div ref={setRef}>\n *     {visible() ? 'Element is visible!' : 'Element is hidden'}\n *   </div>\n * );\n * ```\n *\n * @example\n * Utilisation avec createWindowHandler\n * ```tsx\n * const [visible, setRef] = createIntersect();\n *\n * createWindowHandler('scroll', handleScroll, visible);\n *\n * return <section ref={setRef}>Content</section>;\n * ```\n */\n/**\n * createIntersect variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createIntersect = (\n  options: IntersectionObserverInit = { threshold: 0.1 },\n) => {\n  let observer: IntersectionObserver | undefined;\n  const [isIntersecting, setIsIntersecting] = createSignal(false);\n  let ref: HTMLElement | null = null;\n\n  onMount(() => {\n    observer = new IntersectionObserver(entries => {\n      const first = entries[0];\n      setIsIntersecting(first.isIntersecting);\n    }, options);\n\n    if (ref) observer?.observe(ref);\n  });\n  // Ne rien faire côté serveur\n\n  const intersecting = createDeferred(isIntersecting, {\n    timeoutMs: 15,\n  });\n  const setRef = (el: HTMLElement) => (ref = el);\n  onCleanup(() => observer?.disconnect());\n\n  return [intersecting, setRef] as const; // Return signal and ref setter\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.interval": {
+    "ui/signals/interval": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -728,7 +1056,7 @@
       "text": "import { createEffect, onCleanup, Accessor } from 'solid-js';\nimport { buildBoolean } from '../helpers';\n\n/**\n * Options for the auto interval creator.\n */\ntype Options = {\n  /** The interval delay in milliseconds. Defaults to 3000. */\n  delay?: number;\n  /** Condition to determine whether the interval is active. */\n  start?: Accessor<boolean | undefined> | boolean;\n};\n\n/**\n * Creates an interval controller to start/stop recurring task execution.\n * @param callback - The function to call on each tick.\n * @param delay - The delay in milliseconds. Defaults to 3000.\n * @returns An object containing start and stop functions.\n */\n/**\n * createInterval variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createInterval = (callback: () => void, delay = 3000) => {\n  let interval: NodeJS.Timeout;\n\n  const start = (condition?: Options['start']) => {\n    const _condition = buildBoolean(condition);\n    if (!_condition) return stop();\n    interval = setInterval(() => {\n      callback();\n    }, delay);\n  };\n\n  const stop = (condition?: Options['start']) => {\n    const _condition = buildBoolean(condition);\n    if (!_condition) return;\n    if (interval) clearInterval(interval);\n  };\n\n  onCleanup(stop);\n  return { start, stop };\n};\n\n/**\n * Automatically sets up and starts an interval effect based on condition properties.\n * @param callback - The function to call on each tick.\n * @param options - Configuration options containing delay and start condition.\n */\ncreateInterval.auto = (callback: () => void, options: Options = {}) => {\n  const { start } = createInterval(callback, options.delay);\n  createEffect(() => start(options.start));\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.lang": {
+    "ui/signals/lang": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -747,7 +1075,7 @@
       "text": "import { createSignal } from 'solid-js';\nimport { createDebounce } from './debounce';\n\n/**\n * Storage key used to persist the selected language in localStorage.\n */\n/**\n * LANG_STORE_KEY variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const LANG_STORE_KEY = 'lang';\n\n/**\n * Array of supported language codes in the application.\n */\n/**\n * LANGS variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const LANGS = ['fr', 'en', 'es'] as const;\n\n/**\n * Type representing one of the supported language codes.\n */\n/**\n * Lang type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Lang = (typeof LANGS)[number];\n\nconst createLang = () => {\n  let __lang = (localStorage.getItem(LANG_STORE_KEY) ||\n    navigator.language.substring(0, 2)) as Lang;\n\n  const check = !__lang || !LANGS.includes(__lang as any);\n  if (check) __lang = 'en';\n\n  const [lang, _setLang] = createSignal(__lang);\n\n  const setLang = (newLang: Lang) => {\n    localStorage.setItem(LANG_STORE_KEY, newLang);\n    _setLang(newLang);\n  };\n\n  const debounce = createDebounce(setLang, 350);\n\n  return [lang, debounce] as const;\n};\n\n/**\n * Global signal representing the active language state and its debounced setter.\n */\n/**\n * const variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const [lang, setLang] = createLang();\n\n    ",
       "exports": []
     },
-    "ui.signals.links": {
+    "ui/signals/links": {
       "imports": [
         {
           "moduleSpecifier": "@bemedev/pipe/extensions/common",
@@ -766,7 +1094,7 @@
       "text": "import { identity } from '@bemedev/pipe/extensions/common';\nimport { useRouter } from '@tanstack/solid-router';\n\ntype Filter = (value: string) => boolean;\ntype SearchFn = (to: string) => () => any;\ntype FormatFn = (to: string) => string;\ntype Args = {\n  filter?: Filter;\n  search?: SearchFn;\n  formatLabel?: FormatFn;\n};\n\n/**\n * Formats a route path into a human-readable label.\n * @param to - The route path string.\n * @returns The formatted label string.\n */\n/**\n * formatLabel1 variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const formatLabel1 = (to: string) => {\n  const step1 = to.charAt(1).toUpperCase() + to.slice(2);\n  const out = step1 === '' ? 'Home' : step1;\n  return out;\n};\n\n/**\n * Creates formatted navigation links for routes retrieved from the TanStack Router.\n * @param args - Options to filter, format labels, or build searches for the links.\n * @returns An array of route link descriptors.\n */\n/**\n * createLinks variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createLinks = (args?: Args) => {\n  const { routesByPath } = useRouter();\n\n  const flatRoutes = Object.keys(routesByPath);\n\n  // #region Destructure maybe undefined object\n  const {\n    filter = () => true,\n    search = () => () => undefined,\n    formatLabel = identity,\n  } = args ?? {};\n  // #endregion\n\n  return flatRoutes\n    .sort((a, b) => {\n      if (a === '/') return -1; // Home should be first\n      return a.localeCompare(b);\n    })\n    .filter(filter)\n    .map(to => ({\n      to,\n      children: formatLabel(to),\n      search: search(to),\n    }));\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.ressource": {
+    "ui/signals/ressource": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -784,7 +1112,7 @@
       "text": "import { createContext, createSignal, useContext, Accessor } from 'solid-js';\n\n/**\n * États possibles pour une ressource\n *\n * - `idle` : État initial, ressource non chargée\n * - `loading` : Ressource en cours de téléchargement\n * - `loaded` : Ressource chargée avec succès\n * - `errored` : Erreur lors du téléchargement\n */\n/**\n * ResourceState type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ResourceState = 'idle' | 'loading' | 'loaded' | 'errored';\n\n/**\n * Information d'état pour une ressource spécifique\n */\n/**\n * ResourceStatus interface - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport interface ResourceStatus<T = unknown> {\n  state: ResourceState;\n  data?: T;\n  error?: Error;\n}\n\n/**\n * Fonction de téléchargement d'une ressource\n * Doit retourner les données téléchargées\n */\n/**\n * ResourceDownloader type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ResourceDownloader<T = unknown> = () => Promise<T>;\n\n/**\n * Callback appelée quand l'état de la ressource change\n */\n/**\n * ResourceSubscriber type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type ResourceSubscriber<T = unknown> = (\n  status: ResourceStatus<T>,\n) => void;\n\n/**\n * Represents a single file resource entry\n *\n * - `key` : Unique identifier for the resource\n * - `data` : The resource content (can be any type: string, blob, object, etc.)\n * - `timestamp` : When the resource was added to the cache\n */\n/**\n * FileResource interface - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport interface FileResource<T = unknown> {\n  key: string;\n  data: T;\n  timestamp: number;\n}\n\n/**\n * Context value for managing file resources\n *\n * Provides methods to:\n * - Store and retrieve resources\n * - Check resource existence\n * - Clear individual or all resources\n * - Get all resources or by key pattern\n */\n/**\n * ResourceContextValue interface - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport interface ResourceContextValue {\n  /**\n   * Internal Map storing all resources by key\n   */\n  resources: Map<string, unknown>;\n\n  subscribe: (\n    key: string,\n    downloader: ResourceDownloader,\n    subscriber: ResourceSubscriber,\n  ) => () => void;\n\n  /**\n   * Get the current state of a resource\n   *\n   * @param key - Resource identifier\n   * @returns Current state: 'idle' | 'loading' | 'loaded' | 'errored'\n   *\n   * @example\n   * ```tsx\n   * const { getState } = useResource();\n   * const state = getState('image-logo'); // 'loaded'\n   * ```\n   */\n  state: (key: string) => ResourceState;\n}\n\n/**\n * Creates the resource context for managing file resources globally\n *\n * @internal Use `useResource()` hook instead of consuming this context directly\n */\n/**\n * ResourceContext variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const ResourceContext = createContext<\n  ResourceContextValue | undefined\n>();\n\n/**\n * Creates a resource context provider that stores file resources in a Map\n *\n * This function initializes the context with all necessary methods\n * to manage file resources throughout the application.\n *\n * @returns An object containing:\n *   - `ResourceProvider` : Solid component to wrap your app\n *   - `createResourceContext` : Function to manually create resource contexts\n *\n * @example\n * ```tsx\n * import { createResourceContext } from '@bemedev/tansolid/signals';\n *\n * // In your root component\n * export const App = () => {\n *   return (\n *     <ResourceProvider>\n *       <YourApp />\n *     </ResourceProvider>\n *   );\n * };\n * ```\n */\n/**\n * createResourceContext variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createResourceContext = () => {\n  // Map pour stocker l'état de chaque ressource\n  const resourceStates = new Map<\n    string,\n    [signal: () => ResourceState, setter: (state: ResourceState) => void]\n  >();\n\n  // Signal pour stocker les souscripteurs par ressource\n  const [subscribersData, setSubscribersData] = createSignal(\n    new Map<string, Set<ResourceSubscriber>>(),\n  );\n\n  // Signal pour stocker les promesses de téléchargement en cours\n  const [downloadPromisesData, setDownloadPromisesData] = createSignal(\n    new Map<string, Promise<unknown>>(),\n  );\n\n  /**\n   * Crée ou récupère le signal d'état pour une ressource\n   */\n  const getOrCreateState = (\n    key: string,\n  ): [Accessor<ResourceState>, (state: ResourceState) => void] => {\n    if (!resourceStates.has(key)) {\n      const signal = createSignal<ResourceState>('idle');\n      resourceStates.set(key, signal);\n    }\n    return resourceStates.get(key)!;\n  };\n\n  /**\n   * Notifie tous les souscripteurs d'un changement d'état\n   */\n  const notifySubscribers = (key: string, status: ResourceStatus) => {\n    const subs = subscribersData().get(key);\n    if (subs) {\n      subs.forEach(sub => sub(status));\n    }\n  };\n\n  const contextValue: ResourceContextValue = {\n    resources: new Map<string, unknown>(),\n\n    /**\n     * Subscribe à une ressource avec gestion automatique du téléchargement\n     */\n    subscribe(\n      key: string,\n      downloader: ResourceDownloader,\n      subscriber: ResourceSubscriber,\n    ) {\n      // Ajouter le souscripteur\n      const [getState, setState] = getOrCreateState(key);\n      notifySubscribers(key, { state: getState() });\n\n      setSubscribersData(subs1 => {\n        if (!subs1.has(key)) {\n          subs1.set(key, new Set());\n        }\n        const s = subs1.get(key)!;\n        s.add(subscriber);\n        return subs1;\n      });\n\n      // Obtenir ou créer le signal d'état\n\n      // Si un téléchargement est déjà en cours, attendre et notifier\n      const downloadPromises = downloadPromisesData();\n      if (downloadPromises.has(key)) {\n        // Rien à faire, le téléchargement est en cours\n      } else if (getState() === 'loaded') {\n        // Ressource déjà chargée\n        const data = this.resources.get(key);\n\n        subscriber({ state: 'loaded', data });\n      } else {\n        // Lancer le téléchargement\n        setState('loading');\n        notifySubscribers(key, { state: getState() });\n\n        const downloadPromise = downloader()\n          .then(data => {\n            this.resources.set(key, data);\n            setState('loaded');\n            notifySubscribers(key, { state: 'loaded', data });\n\n            setDownloadPromisesData(dp => {\n              dp.delete(key);\n              return dp;\n            });\n          })\n          .catch((error: Error) => {\n            setState('errored');\n            notifySubscribers(key, { state: 'errored', error });\n            setDownloadPromisesData(dp => {\n              dp.delete(key);\n              return dp;\n            });\n          });\n\n        downloadPromises.set(key, downloadPromise);\n        setDownloadPromisesData(downloadPromises);\n      }\n\n      // Retourner fonction pour se désabonner\n      return () => {\n        setSubscribersData(map => {\n          const subs = map.get(key);\n          if (subs) {\n            subs.delete(subscriber);\n            if (subs.size === 0) {\n              map.delete(key);\n            }\n          }\n          return map;\n        });\n      };\n    },\n\n    /**\n     * Récupère l'état actuel d'une ressource\n     */\n    state(key: string): ResourceState {\n      const [state] = getOrCreateState(key);\n      return state();\n    },\n  };\n\n  return contextValue;\n};\n\n/**\n * Hook to use the resource context\n *\n * Must be called within a component wrapped by `ResourceProvider`\n *\n * @returns The resource context value with all methods and accessors\n * @throws Error if used outside of ResourceProvider\n *\n * @example\n * ```tsx\n * import { useResource } from '@bemedev/tansolid/signals';\n * import { createEffect } from 'solid-js';\n *\n * const MyComponent = () => {\n *   const { set, get, has, size } = useResource();\n *\n *   createEffect(() => {\n *     console.log(`Total resources: ${size()}`);\n *   });\n *\n *   const handleCache = () => {\n *     set('my-resource', { id: 1, name: 'Test' });\n *   };\n *\n *   const handleRetrieve = () => {\n *     const data = get('my-resource');\n *     console.log(data);\n *   };\n *\n *   return (\n *     <div>\n *       <button onClick={handleCache}>Cache Resource</button>\n *       <button onClick={handleRetrieve}>Get Resource</button>\n *       <p>Cached items: {size()}</p>\n *     </div>\n *   );\n * };\n * ```\n */\n/**\n * useRessource variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const useRessource = <T>(key: string) => {\n  const context = useContext(ResourceContext);\n  if (!context) {\n    throw new Error(\n      'useResource must be called within a ResourceProvider. ' +\n        'Make sure your component is wrapped with <ResourceProvider>',\n    );\n  }\n\n  const state = () => context.state(key);\n\n  const subscribe = (\n    downloader: ResourceDownloader<T>,\n    subscriber: ResourceSubscriber<T>,\n  ) => context.subscribe(key, downloader, subscriber as any);\n\n  return [state, subscribe] as const;\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.scroll": {
+    "ui/signals/scroll": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -797,7 +1125,7 @@
       "text": "import { createSignal } from 'solid-js';\n\n/**\n * Creates scroll controllers (scrollY, scrollX) linked to a target DOM element via ref.\n * @param behavior - The scroll behavior (e.g. 'smooth', 'auto'). Defaults to 'smooth'.\n * @returns An object containing setRef, scrollY, and scrollX functions.\n */\n/**\n * createScroll variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createScroll = (\n  behavior: ScrollOptions['behavior'] = 'smooth',\n) => {\n  const [ref, setRef] = createSignal<HTMLDivElement>();\n\n  // Example of a button to manually trigger the scroll\n  const scrollY = (percent = 0) => {\n    const _ref = ref();\n    if (_ref) {\n      const top = (_ref.scrollHeight * percent) / 100;\n      _ref.scrollTo({ top, behavior });\n    }\n  };\n\n  const scrollX = (percent = 0) => {\n    const _ref = ref();\n    if (_ref) {\n      const left = (_ref.scrollWidth * percent) / 100;\n      _ref.scrollTo({ left, behavior });\n    }\n  };\n\n  return { setRef, scrollY, scrollX };\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.sleep": {
+    "ui/signals/sleep": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -810,7 +1138,7 @@
       "text": "import { createSignal, onCleanup } from 'solid-js';\n\ntype Status = 'idle' | 'paused' | 'started' | 'stopped';\n\n/**\n * Hook pour gérer un délai (sleep) avec contrôle avancé\n * @param delay - Délai en millisecondes avant de passer à true\n * @returns Un objet contenant l'état et les fonctions de contrôle\n */\n/**\n * createSleep variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createSleep = (delay: number = 1000, autoStart = true) => {\n  const [timed, setIsTimed] = createSignal(false);\n  const [status, setStatus] = createSignal<Status>('idle');\n  let timeoutId: NodeJS.Timeout | undefined;\n  let startTime: number = 0;\n  let remainingTime: number = delay;\n\n  /**\n   * Lance le timer pour passer timed à true après le délai\n   */\n  const start = () => {\n    if (status() !== 'idle') return;\n\n    setIsTimed(false);\n    setStatus('started');\n    startTime = Date.now();\n    remainingTime = delay;\n\n    timeoutId = setTimeout(() => {\n      setIsTimed(true);\n      setStatus('idle');\n    }, delay);\n  };\n\n  /**\n   * Met en pause le timer en cours\n   */\n  const pause = () => {\n    if (status() !== 'started') return;\n\n    if (timeoutId !== undefined) {\n      clearTimeout(timeoutId);\n      timeoutId = undefined;\n    }\n    remainingTime = delay - (Date.now() - startTime);\n    setStatus('paused');\n  };\n\n  /**\n   * Reprend le timer depuis la pause\n   */\n  const resume = () => {\n    if (status() !== 'paused') return;\n\n    setStatus('started');\n    startTime = Date.now();\n\n    timeoutId = setTimeout(() => {\n      setIsTimed(true);\n      setStatus('idle');\n    }, remainingTime);\n  };\n\n  /**\n   * Annule le timer en cours (stop)\n   */\n  const stop = () => {\n    if (status() === 'stopped') return;\n    if (timeoutId !== undefined) {\n      clearTimeout(timeoutId);\n      timeoutId = undefined;\n    }\n    setStatus('stopped');\n    setIsTimed(false);\n  };\n\n  /**\n   * Redémarre le timer (annule et relance)\n   */\n  const restart = () => {\n    stop();\n    start();\n  };\n\n  /**\n   * Passe immédiatement timed à true (court-circuite le délai)\n   */\n  const skip = () => {\n    if (status() === 'started' || status() === 'paused') {\n      if (timeoutId !== undefined) {\n        clearTimeout(timeoutId);\n        timeoutId = undefined;\n      }\n      setIsTimed(true);\n      setStatus('idle');\n    }\n  };\n\n  // Démarre automatiquement\n  if (autoStart) start();\n\n  // Cleanup au démontage du composant\n  onCleanup(stop);\n\n  return {\n    /**\n     * Signal indiquant si le délai est écoulé (true) ou non (false)\n     */\n    timed,\n    /**\n     * Signal indiquant le statut du timer\n     */\n    status,\n    /**\n     * Lance le timer\n     */\n    start,\n    /**\n     * Met en pause le timer\n     */\n    pause,\n    /**\n     * Reprend le timer\n     */\n    resume,\n    /**\n     * Annule le timer (stop)\n     */\n    stop,\n    /**\n     * Redémarre le timer\n     */\n    restart,\n    /**\n     * Court-circuite le délai et passe immédiatement à true\n     */\n    skip,\n  };\n};\n\n    ",
       "exports": []
     },
-    "ui.signals.window": {
+    "ui/signals/window": {
       "imports": [
         {
           "moduleSpecifier": "solid-js",
@@ -830,13 +1158,13 @@
       "text": "import { createDeferred, createEffect, createSignal, onCleanup, onMount, Accessor } from 'solid-js';\n\n/**\n * Safely accesses the `window` object in SSR-safe environments by returning a deferred signal.\n * @returns A deferred accessor for the Window object.\n */\n/**\n * assignWindow variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const assignWindow = () => {\n  const [win, setWin] = createSignal<Window>();\n  onMount(() => setWin(window));\n  return createDeferred(win, { timeoutMs: 15 });\n};\n\n/**\n * Object mapping action keys to window-handler operations.\n */\n/**\n * UseWindowProps type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type UseWindowProps = Record<string, (win: Window) => void>;\n\n/**\n * Return type map for window callbacks.\n */\ntype Out<T extends UseWindowProps> = { [K in keyof T]: () => void };\n\n/**\n * Creates actions that safely interact with the window object when it becomes available.\n * @template T - The custom shape of window operations.\n * @param props - Key-value map of callback operations that require a `Window` instance.\n * @returns Safe wrappers for each callback.\n */\n/**\n * useWindow variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const useWindow = <const T extends UseWindowProps>(\n  props: T,\n): Out<T> => {\n  const win = assignWindow();\n  const entries = Object.entries(props);\n\n  const out = Object.fromEntries(\n    entries.map(([name, handler]) => {\n      const method = () => {\n        const _win = win();\n        if (_win) return handler(_win);\n      };\n      return [name, method] as const;\n    }),\n  );\n\n  return out as Out<T>;\n};\n\n/**\n * Crée un gestionnaire d'événements pour l'objet `window` qui peut être activé/désactivé conditionnellement.\n *\n * @template K - Type de l'événement window (keyof WindowEventMap)\n * @param type - Type d'événement à écouter (ex: 'keydown', 'resize', 'scroll')\n * @param listener - Fonction callback appelée lors du déclenchement de l'événement\n * @param condition - Condition (booléenne ou accessor) qui détermine si l'événement doit être écouté\n * @returns Objet contenant les méthodes `add` et `remove` pour gérer manuellement l'événement\n *\n * @example\n * ```tsx\n * const [visible, setRef] = createIntersect();\n *\n * createWindowHandler(\n *   'keydown',\n *   (e) => {\n *     if (e.key === 'Escape') handleEscape();\n *   },\n *   visible\n * );\n * ```\n */\n/**\n * createWindowHandler variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const createWindowHandler = <K extends keyof WindowEventMap>(\n  type: K,\n  listener: (ev: WindowEventMap[K]) => void,\n  condition: boolean | Accessor<boolean | undefined>,\n) => {\n  const { add, remove } = useWindow({\n    add: ({ addEventListener }) => addEventListener(type, listener),\n    remove: ({ removeEventListener }) =>\n      removeEventListener(type, listener),\n  });\n\n  createEffect(() => {\n    const _condition =\n      typeof condition === 'function' ? (condition() ?? false) : condition;\n    if (_condition) return add();\n    return remove();\n  });\n\n  onCleanup(remove);\n  return { add, remove };\n};\n\n/**\n * Crée un gestionnaire d'événements pour l'objet `window` qui s'active au montage du composant.\n * Version simplifiée de `createWindowHandler` sans condition, l'événement est toujours actif après le montage.\n *\n * @template K - Type de l'événement window (keyof WindowEventMap)\n * @param type - Type d'événement à écouter (ex: 'resize', 'scroll', 'keydown')\n * @param listener - Fonction callback appelée lors du déclenchement de l'événement\n *\n * @example\n * ```tsx\n * createWindowHandler.onMount('resize', () => {\n *   console.log('Window resized');\n * });\n * ```\n */\ncreateWindowHandler.onMount = <K extends keyof WindowEventMap>(\n  type: K,\n  listener: (ev: WindowEventMap[K]) => void,\n) => {\n  onMount(() => {\n    window.addEventListener(type, listener);\n    return onCleanup(() => window.removeEventListener(type, listener));\n  });\n};\n\n    ",
       "exports": []
     },
-    "utils.array": {
+    "utils/array": {
       "imports": [],
       "relativePath": "utils/array.ts",
       "text": "/**\n * inBounds variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const inBounds = (data: any[], index: number) => {\n  const out = data.map((_, i) => i).includes(index);\n\n  return out;\n};\n\n/**\n * Creates a filter function to check if an object matches the given partial object.\n * @template T - The object type.\n * @param data - A partial object with keys and values to match.\n * @returns A predicate function that takes an object and returns true if it matches.\n */\n/**\n * narrowFilter function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function narrowFilter<T>(data: Partial<T>): (data: T) => boolean;\n\n/**\n * Creates a filter function to check if an object has a key equal to the given value.\n * @template T - The object type.\n * @param key - The key of the object to compare.\n * @param value - The value to compare against.\n * @returns A predicate function that takes an object and returns true if it matches.\n */\n/**\n * narrowFilter function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function narrowFilter<T>(\n  key: keyof T,\n  value: T[typeof key],\n): (data: T) => boolean;\n\n/**\n * Implementation of narrowFilter which supports filtering by a single key-value pair or by multiple properties in an object.\n */\n/**\n * narrowFilter function - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport function narrowFilter<T>(arg1: any, arg2?: unknown) {\n  const out = (data: T) => {\n    if (typeof arg1 === 'string') {\n      const key = arg1 as keyof T;\n      return data[key] === arg2;\n    }\n\n    for (const key in arg1) {\n      if (Object.prototype.hasOwnProperty.call(arg1, key)) {\n        const elm1 = arg1[key];\n        const elm2 = (data as any)[key];\n        if (elm1 !== elm2) return false;\n      }\n    }\n\n    return true;\n  };\n\n  return out;\n}\n",
       "exports": []
     },
-    "utils.console.index": {
+    "utils/console/index": {
       "imports": [],
       "relativePath": "utils/console/index.ts",
       "text": "export * from './warn';\n",
@@ -849,13 +1177,13 @@
         }
       ]
     },
-    "utils.console.warn.avoid": {
+    "utils/console/warn.avoid": {
       "imports": [],
       "relativePath": "utils/console/warn.avoid.ts",
       "text": "/**\n * AVOIDED_WARNINGS variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const AVOIDED_WARNINGS = [\n  'computations created outside a `createRoot` or `render` will never be disposed',\n];\n",
       "exports": []
     },
-    "utils.console.warn": {
+    "utils/console/warn": {
       "imports": [
         {
           "moduleSpecifier": "./warn.avoid",
@@ -868,7 +1196,7 @@
       "text": "import { AVOIDED_WARNINGS } from './warn.avoid';\n\nconst originalWarn = console.warn;\n\nconsole.warn = function (...args: any[]) {\n  const message = args.join(' ');\n  const check = !AVOIDED_WARNINGS.some(warning =>\n    message.includes(warning),\n  );\n  if (check) originalWarn(...args);\n};\n\n    ",
       "exports": []
     },
-    "utils.index": {
+    "utils/index": {
       "imports": [],
       "relativePath": "utils/index.ts",
       "text": "export * from './console';\nexport * from './array';\nexport * from './string';\nexport * from './types';\nexport * from './seo';\nexport * from './valibot';\nexport * from '@bemedev/pipe';\nexport * from 'clsx';\nexport * from 'tailwind-merge';\nexport * from 'color';\n",
@@ -935,25 +1263,25 @@
         }
       ]
     },
-    "utils.seo": {
+    "utils/seo": {
       "imports": [],
       "relativePath": "utils/seo.ts",
       "text": "type Props = {\n  /** The document title. */\n  title: string;\n  /** The document description. */\n  description?: string;\n  /** The URL of the preview image. */\n  image?: string;\n  /** Keywords associated with the page. */\n  keywords?: string;\n};\n\n/**\n * Generates an array of SEO-related metadata objects for use in document heads.\n * @param props - The SEO options, including title, description, keywords, and image.\n * @returns An array of tag descriptors.\n */\n/**\n * seo variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const seo = ({ title, description, keywords, image }: Props) => {\n  const tags = [\n    { title },\n    { name: 'description', content: description },\n    { name: 'keywords', content: keywords },\n    { name: 'twitter:title', content: title },\n    { name: 'twitter:description', content: description },\n    { name: 'og:type', content: 'website' },\n    { name: 'og:title', content: title },\n    { name: 'og:description', content: description },\n    ...(image\n      ? [\n          { name: 'twitter:image', content: image },\n          { name: 'twitter:card', content: 'summary_large_image' },\n          { name: 'og:image', content: image },\n        ]\n      : []),\n  ];\n\n  return tags;\n};\n",
       "exports": []
     },
-    "utils.string": {
+    "utils/string": {
       "imports": [],
       "relativePath": "utils/string.ts",
       "text": "/**\n * capitalize variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const capitalize = (s: string) => {\n  return s[0].toUpperCase() + s.slice(1);\n};\n",
       "exports": []
     },
-    "utils.types": {
+    "utils/types": {
       "imports": [],
       "relativePath": "utils/types.ts",
       "text": "/**\n * Primitive type - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport type Primitive =\n  | string\n  | number\n  | bigint\n  | boolean\n  | symbol\n  | null\n  | undefined;\n",
       "exports": []
     },
-    "utils.valibot": {
+    "utils/valibot": {
       "imports": [
         {
           "moduleSpecifier": "valibot",
