@@ -3,7 +3,6 @@ import { command, option, string } from 'cmd-ts';
 import { init as handler } from '../functions/init';
 
 export const init = command({
-  name: 'init',
   args: {
     json: option({
       long: 'json',
@@ -22,5 +21,8 @@ export const init = command({
       defaultValue: () => CLI_NAME,
     }),
   },
+
+  name: 'init',
+  description: 'Initializes the codebase configuration.',
   handler,
 });

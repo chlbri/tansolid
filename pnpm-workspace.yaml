@@ -13,4 +13,4 @@ minimumReleaseAge: 300
 
 minimumReleaseAgeExclude:
   - '@bemedev/codebase@1.2.2'
-  - '@bemedev/dev-utils@0.8.0'
+  - '@bemedev/dev-utils@0.8.3'

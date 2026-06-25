@@ -31,6 +31,7 @@
       "#constants": ["./src/constants/index.ts"],
       "~utils/*": ["./src/utils/*"],
       "~cn/*": ["./src/ui/cn/*"],
+      "#cn": ["./src/ui/cn/utils.ts"],
       "~cn-comp/*": ["./src/ui/cn/components/ui/*"],
       "~signals/*": ["./src/ui/signals/*"],
       "~directives/*": ["./src/ui/directives/*"],

@@ -1,22 +1,26 @@
 import { $ } from 'zx';
-import path from 'node:path';
-import fs from 'node:fs';
+import path from 'path';
+import fs, { readFileSync } from 'fs';
 
 const FOLDER = 'tansolid';
 const JSON_PATH = '.tansolid.bemedev.json';
 
 describe('CLI tests', () => {
-  const tsconfigPath = path.join(process.cwd(), 'tsconfig.json');
+  const cwd = path.dirname(__dirname);
+  const tsconfigPath = path.join(cwd, 'tsconfig.json');
+  const jsonPah = path.join(cwd, 'package.json');
+  const PACKAGES = ['lucide-solid', '@kobalte/core'];
+
   let originalTsconfig: string;
 
   const rinit = () => {
-    const path_folder = path.join(process.cwd(), 'src', FOLDER);
+    const path_folder = path.join(cwd, 'src', FOLDER);
     if (fs.existsSync(path_folder)) {
       fs.rmSync(path_folder, { recursive: true, force: true });
     }
 
-    if (fs.existsSync(path.join(process.cwd(), JSON_PATH))) {
-      fs.rmSync(path.join(process.cwd(), JSON_PATH));
+    if (fs.existsSync(path.join(cwd, JSON_PATH))) {
+      fs.rmSync(path.join(cwd, JSON_PATH));
     }
 
     if (originalTsconfig !== undefined && fs.existsSync(tsconfigPath)) {
@@ -31,15 +35,20 @@ describe('CLI tests', () => {
     }
   });
 
-  // afterAll(rinit);
+  afterAll(rinit);
 
-  test('should display help', async () => {
+  test('#01 => should display help', async () => {
     const result = await $`pnpm tansolid --help`;
     expect(result.stdout).toContain('tansolid');
+
+    const readJson = readFileSync(jsonPah, 'utf8');
+    PACKAGES.forEach(pack => {
+      expect(readJson).not.toContain(pack);
+    });
   });
 
-  test('should initialize config and folder structure', async () => {
-    const tsconfigPath = path.join(process.cwd(), 'tsconfig.json');
+  test('#02 => should initialize config and folder structure', async () => {
+    const tsconfigPath = path.join(cwd, 'tsconfig.json');
 
     const result = await $`pnpm tansolid init`;
 
@@ -47,13 +56,11 @@ describe('CLI tests', () => {
       'Bemedev initialization completed successfully',
     );
 
-    const hasTansolidDir = fs.existsSync(
-      path.join(process.cwd(), 'src', FOLDER),
-    );
-    const hasTansolidJson = fs.existsSync(
-      path.join(process.cwd(), JSON_PATH),
-    );
-    console.log(path.join(process.cwd(), JSON_PATH));
+    console.log(result.stdout);
+
+    const hasTansolidDir = fs.existsSync(path.join(cwd, 'src', FOLDER));
+    const hasTansolidJson = fs.existsSync(path.join(cwd, JSON_PATH));
+    console.log(path.join(cwd, JSON_PATH));
     expect(hasTansolidDir).toBe(true);
     expect(hasTansolidJson).toBe(true);
 
@@ -64,9 +71,13 @@ describe('CLI tests', () => {
     expect(tsconfigContent.compilerOptions.paths['#tansolid/*']).toEqual([
       './src/tansolid/*',
     ]);
+    const readJson = readFileSync(jsonPah, 'utf8');
+    PACKAGES.forEach(pack => {
+      expect(readJson).toContain(pack);
+    });
   });
 
-  test('should add a file to the codebase configuration', async () => {
+  test('#03 => should add a file to the codebase configuration', async () => {
     const sourceJson = path.join(JSON_PATH);
 
     const result = await $`pnpm tansolid add ui/molecules/Tooltip`;
@@ -88,9 +99,14 @@ describe('CLI tests', () => {
     expect(bemedevJsonContent.files).toContain(
       'ui/molecules/Tooltip.types',
     );
+
+    const readJson = readFileSync(jsonPah, 'utf8');
+    PACKAGES.forEach(pack => {
+      expect(readJson).toContain(pack);
+    });
   });
 
-  test('should remove a file from the codebase configuration', async () => {
+  test('#04 => should remove a file from the codebase configuration', async () => {
     const result =
       await $`pnpm tansolid remove ui.molecules.Tooltip.constants`;
     console.log(result.stdout);
@@ -103,9 +119,14 @@ describe('CLI tests', () => {
     expect(bemedevJsonContent.files).not.toContain(
       'ui.molecules.Tooltip.constants',
     );
+
+    const readJson = readFileSync(jsonPah, 'utf8');
+    PACKAGES.forEach(pack => {
+      expect(readJson).toContain(pack);
+    });
   });
 
-  test.skip('should destroy the configuration and directory structure', async () => {
+  test('#05 => should destroy the configuration and directory structure', async () => {
     const result = await $`pnpm tansolid destroy`;
     expect(result.stdout).toContain('Folder');
     expect(result.stdout).toContain('has been removed');
@@ -115,5 +136,9 @@ describe('CLI tests', () => {
     const hasTansolidJson = fs.existsSync(JSON_PATH);
     expect(hasTansolidDir).toBe(false);
     expect(hasTansolidJson).toBe(false);
+    const readJson = readFileSync(jsonPah, 'utf8');
+    PACKAGES.forEach(pack => {
+      expect(readJson).not.toContain(pack);
+    });
   });
 });
