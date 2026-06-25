@@ -55,7 +55,15 @@ You can customize the folder name or JSON path with flags:
 pnpm tansolid init --root custom-folder --json custom-config.json
 ```
 
-### 2. Adding Components or Utilities
+### 2. Installing Dependencies
+
+To install codebase configuration dependencies:
+
+```bash
+pnpm dlx tansolid install
+```
+
+### 3. Adding Components or Utilities
 
 To add a modular component or utility to your project:
 
@@ -67,7 +75,7 @@ This will copy the `Tooltip` component along with all of its internal
 dependency files (e.g., hooks, helpers, types) into your `src/tansolid/`
 directory.
 
-### 3. Removing Components
+### 4. Removing Components
 
 To clean up and remove a component or utility:
 
@@ -75,12 +83,20 @@ To clean up and remove a component or utility:
 pnpm tansolid remove ui/molecules/Tooltip
 ```
 
-### 4. Destroying the Configuration
+### 5. Uninstalling Dependencies
+
+To uninstall codebase configuration dependencies:
+
+```bash
+pnpm dlx tansolid uninstall
+```
+
+### 6. Destroying the Configuration
 
 To remove all copied files and the configuration from your workspace:
 
 ```bash
-pnpm tansolid destroy
+pnpm dlx tansolid destroy
 ```
 
 ---
@@ -111,7 +127,11 @@ pnpm tansolid destroy
 - **`AccordionQA`**: Frequently asked questions style accordion component.
 - **`Counter`**: Clean interactive counter component.
 - **`FadingDots`**: Modern loading animation/dots indicator.
+- **`focus`**: Component to track focus state of children.
+- **`LangSwitcher`**: Multilingual language switcher component.
 - **`MultiText`**: Multi-line animated text transitions.
+- **`Select`**: Accessible dropdown select component powered by
+  `@kobalte/core`.
 - **`TypingText`**: Smooth typewriter text component.
 - **`reducer`**: React-style useReducer implementation for state
   management.

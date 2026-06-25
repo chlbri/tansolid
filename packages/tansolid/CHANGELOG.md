@@ -5,6 +5,28 @@
 <details>
 <summary>
 
+## **[0.2.0] - 25/06/2026** => _21:10_
+
+</summary>
+
+- Add `LangSwitcher` and `Select` UI molecules
+- Add `install` and `uninstall` CLI commands to manage configuration
+  dependencies
+- Add support for customizable root folder and configuration JSON path in
+  CLI `init` command
+- Refactor configuration directory rename to `tansolid`
+- Refactor CLI `add` and `remove` commands to resolve component
+  dependencies
+- Refactor type definitions and remove obsolete `LocalImage` component
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.1.0] - 17/06/2026** => _02:30_
 
 </summary>
