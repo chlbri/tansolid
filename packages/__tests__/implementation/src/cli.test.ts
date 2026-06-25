@@ -1,6 +1,6 @@
 import { $ } from 'zx';
 import path from 'path';
-import fs, { readFileSync } from 'fs';
+import fs from 'fs';
 
 const FOLDER = 'tansolid';
 const JSON_PATH = '.tansolid.bemedev.json';
@@ -10,10 +10,9 @@ describe('CLI tests', () => {
   const tsconfigPath = path.join(cwd, 'tsconfig.json');
   const jsonPah = path.join(cwd, 'package.json');
   const PACKAGES = ['lucide-solid', '@kobalte/core'];
-
   let originalTsconfig: string;
 
-  const rinit = () => {
+  beforeAll(() => {
     const path_folder = path.join(cwd, 'src', FOLDER);
     if (fs.existsSync(path_folder)) {
       fs.rmSync(path_folder, { recursive: true, force: true });
@@ -26,22 +25,22 @@ describe('CLI tests', () => {
     if (originalTsconfig !== undefined && fs.existsSync(tsconfigPath)) {
       fs.writeFileSync(tsconfigPath, originalTsconfig, 'utf8');
     }
-  };
-
-  beforeAll(() => {
-    rinit();
     if (fs.existsSync(tsconfigPath)) {
       originalTsconfig = fs.readFileSync(tsconfigPath, 'utf8');
     }
   });
 
-  afterAll(rinit);
+  afterAll(() => {
+    if (fs.existsSync(tsconfigPath)) {
+      fs.writeFileSync(tsconfigPath, originalTsconfig, 'utf8');
+    }
+  });
 
   test('#01 => should display help', async () => {
     const result = await $`pnpm tansolid --help`;
     expect(result.stdout).toContain('tansolid');
 
-    const readJson = readFileSync(jsonPah, 'utf8');
+    const readJson = fs.readFileSync(jsonPah, 'utf8');
     PACKAGES.forEach(pack => {
       expect(readJson).not.toContain(pack);
     });
@@ -71,7 +70,7 @@ describe('CLI tests', () => {
     expect(tsconfigContent.compilerOptions.paths['#tansolid/*']).toEqual([
       './src/tansolid/*',
     ]);
-    const readJson = readFileSync(jsonPah, 'utf8');
+    const readJson = fs.readFileSync(jsonPah, 'utf8');
     PACKAGES.forEach(pack => {
       expect(readJson).toContain(pack);
     });
@@ -100,7 +99,7 @@ describe('CLI tests', () => {
       'ui/molecules/Tooltip.types',
     );
 
-    const readJson = readFileSync(jsonPah, 'utf8');
+    const readJson = fs.readFileSync(jsonPah, 'utf8');
     PACKAGES.forEach(pack => {
       expect(readJson).toContain(pack);
     });
@@ -120,13 +119,18 @@ describe('CLI tests', () => {
       'ui.molecules.Tooltip.constants',
     );
 
-    const readJson = readFileSync(jsonPah, 'utf8');
+    const readJson = fs.readFileSync(jsonPah, 'utf8');
     PACKAGES.forEach(pack => {
       expect(readJson).toContain(pack);
     });
   });
 
-  test('#05 => should destroy the configuration and directory structure', async () => {
+  test('#05 => Add LangSwitcher', async () => {
+    const result = await $`pnpm tansolid add ui/molecules/LangSwitcher`;
+    console.log(result.stdout);
+  });
+
+  test('#06 => should destroy the configuration and directory structure', async () => {
     const result = await $`pnpm tansolid destroy`;
     expect(result.stdout).toContain('Folder');
     expect(result.stdout).toContain('has been removed');
@@ -136,7 +140,7 @@ describe('CLI tests', () => {
     const hasTansolidJson = fs.existsSync(JSON_PATH);
     expect(hasTansolidDir).toBe(false);
     expect(hasTansolidJson).toBe(false);
-    const readJson = readFileSync(jsonPah, 'utf8');
+    const readJson = fs.readFileSync(jsonPah, 'utf8');
     PACKAGES.forEach(pack => {
       expect(readJson).not.toContain(pack);
     });

@@ -5,6 +5,27 @@
 <details>
 <summary>
 
+## **[0.3.0] - 25/06/2026** => _23:55_
+
+</summary>
+
+- Remove modular subpath exports from `package.json`, exposing only the
+  main entry point `.`
+- Restructure programmatic API to export CLI helper/command functions
+  (`add`, `destroy`, `init`, `install`, `remove`, `uninstall`) instead of
+  UI components, constants, and types
+- Add CLI test for adding `LangSwitcher` component
+- Refactor Kobalte imports in `Select` molecule component
+- Update dependency `@bemedev/codebase` to `^1.3.0`
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.2.0] - 25/06/2026** => _21:10_
 
 </summary>

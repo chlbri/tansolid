@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/tansolid",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "TanStack Router and Solid JS utilities",
   "license": "MIT",
   "author": {
@@ -43,81 +43,6 @@
       "import": "./lib/index.js",
       "require": "./lib/index.cjs",
       "types": "./lib/index.d.ts"
-    },
-    "./atoms": {
-      "import": "./lib/ui/atoms/index.js",
-      "require": "./lib/ui/atoms/index.cjs",
-      "types": "./lib/ui/atoms/index.d.ts"
-    },
-    "./atoms/*": {
-      "import": "./lib/ui/atoms/*.js",
-      "require": "./lib/ui/atoms/*.cjs",
-      "types": "./lib/ui/atoms/*.d.ts"
-    },
-    "./constants": {
-      "import": "./lib/constants/index.js",
-      "require": "./lib/constants/index.cjs",
-      "types": "./lib/constants/index.d.ts"
-    },
-    "./directives": {
-      "import": "./lib/ui/directives/index.js",
-      "require": "./lib/ui/directives/index.cjs",
-      "types": "./lib/ui/directives/index.d.ts"
-    },
-    "./directives/*": {
-      "import": "./lib/ui/directives/*.js",
-      "require": "./lib/ui/directives/*.cjs",
-      "types": "./lib/ui/directives/*.d.ts"
-    },
-    "./molecules": {
-      "import": "./lib/ui/molecules/index.js",
-      "require": "./lib/ui/molecules/index.cjs",
-      "types": "./lib/ui/molecules/index.d.ts"
-    },
-    "./molecules/*": {
-      "import": "./lib/ui/molecules/*.js",
-      "require": "./lib/ui/molecules/*.cjs",
-      "types": "./lib/ui/molecules/*.d.ts"
-    },
-    "./organisms": {
-      "import": "./lib/ui/organisms/index.js",
-      "require": "./lib/ui/organisms/index.cjs",
-      "types": "./lib/ui/organisms/index.d.ts"
-    },
-    "./organisms/*": {
-      "import": "./lib/ui/organisms/*.js",
-      "require": "./lib/ui/organisms/*.cjs",
-      "types": "./lib/ui/organisms/*.d.ts"
-    },
-    "./signals": {
-      "import": "./lib/ui/signals/index.js",
-      "require": "./lib/ui/signals/index.cjs",
-      "types": "./lib/ui/signals/index.d.ts"
-    },
-    "./signals/*": {
-      "import": "./lib/ui/signals/*.js",
-      "require": "./lib/ui/signals/*.cjs",
-      "types": "./lib/ui/signals/*.d.ts"
-    },
-    "./types": {
-      "import": "./lib/types/index.js",
-      "require": "./lib/types/index.cjs",
-      "types": "./lib/types/index.d.ts"
-    },
-    "./ui": {
-      "import": "./lib/ui/index.js",
-      "require": "./lib/ui/index.cjs",
-      "types": "./lib/ui/index.d.ts"
-    },
-    "./utils": {
-      "import": "./lib/utils/index.js",
-      "require": "./lib/utils/index.cjs",
-      "types": "./lib/utils/index.d.ts"
-    },
-    "./utils/*": {
-      "import": "./lib/utils/*.js",
-      "require": "./lib/utils/*.cjs",
-      "types": "./lib/utils/*.d.ts"
     }
   },
   "scripts": {
@@ -151,7 +76,7 @@
     "upgrade": "pnpm upgrade --latest"
   },
   "dependencies": {
-    "@bemedev/codebase": "^1.2.2",
+    "@bemedev/codebase": "^1.3.0",
     "@bemedev/pipe": "^1.6.1",
     "clsx": "^2.1.1",
     "cmd-ts": "^0.15.0",
