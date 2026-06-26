@@ -5,6 +5,21 @@
 <details>
 <summary>
 
+## **[0.5.0] - 26/06/2026** => _00:30_
+
+</summary>
+
+- Remove check icon (`Check`) and select item indicator
+  (`Select.ItemIndicator`) from `LangSwitcher` component
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.4.0] - 26/06/2026** => _00:24_
 
 </summary>

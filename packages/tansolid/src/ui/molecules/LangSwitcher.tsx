@@ -1,4 +1,3 @@
-import { Check } from 'lucide-solid';
 import type { Component } from 'solid-js';
 import { DEFAULT_LANG } from './LangSwitcher.constants';
 import type { LanguageOption } from './LangSwitcher.types';
@@ -44,9 +43,6 @@ export const LangSwitcher: Component<Props> = ({
                 {itemProps.item.rawValue.label}
               </Select.ItemLabel>
             </div>
-            <Select.ItemIndicator class='flex items-center justify-center text-sidebar-primary-foreground'>
-              <Check class='w-4 h-4' />
-            </Select.ItemIndicator>
           </Select.Item>
         )}
       >
