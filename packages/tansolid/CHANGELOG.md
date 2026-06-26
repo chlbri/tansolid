@@ -5,6 +5,21 @@
 <details>
 <summary>
 
+## **[0.4.0] - 26/06/2026** => _00:24_
+
+</summary>
+
+- Remove dropdown indicator icon (`ChevronDown`) and clean up imports in
+  `LangSwitcher` component
+- <u>Test coverage **_100%_**</u>
+
+</details>
+
+<br/>
+
+<details>
+<summary>
+
 ## **[0.3.0] - 25/06/2026** => _23:55_
 
 </summary>

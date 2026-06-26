@@ -493,15 +493,9 @@
     "ui/molecules/LangSwitcher": {
       "imports": [
         {
-          "moduleSpecifier": "./Select",
-          "kind": "named",
-          "namedImports": ["Select"],
-          "isTypeOnly": false
-        },
-        {
           "moduleSpecifier": "lucide-solid",
           "kind": "named",
-          "namedImports": ["Check", "ChevronDown"],
+          "namedImports": ["Check"],
           "isTypeOnly": false
         },
         {
@@ -511,20 +505,26 @@
           "isTypeOnly": true
         },
         {
+          "moduleSpecifier": "./LangSwitcher.constants",
+          "kind": "named",
+          "namedImports": ["DEFAULT_LANG"],
+          "isTypeOnly": false
+        },
+        {
           "moduleSpecifier": "./LangSwitcher.types",
           "kind": "named",
           "namedImports": ["LanguageOption"],
           "isTypeOnly": true
         },
         {
-          "moduleSpecifier": "./LangSwitcher.constants",
+          "moduleSpecifier": "./Select",
           "kind": "named",
-          "namedImports": ["DEFAULT_LANG"],
+          "namedImports": ["Select"],
           "isTypeOnly": false
         }
       ],
       "relativePath": "ui/molecules/LangSwitcher.tsx",
-      "text": "import { Select } from './Select';\nimport { Check, ChevronDown } from 'lucide-solid';\nimport type { Component } from 'solid-js';\nimport type { LanguageOption } from './LangSwitcher.types';\nimport { DEFAULT_LANG } from './LangSwitcher.constants';\n\ntype Props = {\n  langs?: LanguageOption[];\n  defaultLang?: string;\n  onChange?: (option: LanguageOption) => void;\n  placeholder?: string;\n};\n\n/**\n * LangSwitcher variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const LangSwitcher: Component<Props> = ({\n  langs = [],\n  defaultLang,\n  onChange,\n  placeholder,\n}) => {\n  const selected =\n    langs.find(l => l.value === defaultLang) ?? langs[0] ?? DEFAULT_LANG;\n\n  return (\n    <div class='relative w-full'>\n      <Select<LanguageOption>\n        defaultValue={selected}\n        options={langs}\n        optionValue='value'\n        optionTextValue='label'\n        placeholder={placeholder}\n        onChange={option => {\n          if (option) onChange?.(option);\n        }}\n        itemComponent={itemProps => (\n          <Select.Item\n            item={itemProps.item}\n            class='flex items-center justify-between px-3 py-2 text-sm text-sidebar-foreground rounded-lg cursor-pointer outline-none select-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 data-focus:bg-sidebar-accent data-focus:text-sidebar-accent-foreground transition-all duration-150'\n          >\n            <div class='flex items-center gap-2.5'>\n              <span class='text-base leading-none select-none'>\n                {itemProps.item.rawValue.flag}\n              </span>\n              <Select.ItemLabel class='font-medium'>\n                {itemProps.item.rawValue.label}\n              </Select.ItemLabel>\n            </div>\n            <Select.ItemIndicator class='flex items-center justify-center text-sidebar-primary-foreground'>\n              <Check class='w-4 h-4' />\n            </Select.ItemIndicator>\n          </Select.Item>\n        )}\n      >\n        <Select.Trigger class='flex items-center justify-between w-full px-3.5 py-2.5 text-sm font-medium transition-all duration-300 border rounded-xl bg-sidebar-accent/20 hover:bg-sidebar-accent/50 border-sidebar-border hover:border-sidebar-foreground/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-sidebar-ring disabled:cursor-not-allowed disabled:opacity-50 gap-2.5 text-sidebar-foreground/80 hover:text-sidebar-foreground group'>\n          <Select.Value<LanguageOption>>\n            {state => {\n              const selected = state.selectedOption();\n              return (\n                <div class='flex items-center gap-2.5'>\n                  <span class='text-base leading-none select-none'>\n                    {selected.flag}\n                  </span>\n                  <span class='font-semibold'>{selected.label}</span>\n                </div>\n              );\n            }}\n          </Select.Value>\n          <Select.Icon class='flex items-center text-sidebar-foreground/50 group-hover:text-sidebar-foreground transition-colors'>\n            <ChevronDown class='w-4 h-4 transition-transform duration-300 group-data-expanded:rotate-180' />\n          </Select.Icon>\n        </Select.Trigger>\n        <Select.Portal>\n          <Select.Content class='z-50 min-w-40 overflow-hidden rounded-xl border border-sidebar-border bg-sidebar/95 backdrop-blur-md p-1.5 text-sidebar-foreground shadow-2xl animate-in fade-in-80 slide-in-from-top-1 duration-200'>\n            <Select.Listbox class='space-y-0.5 outline-none max-h-[300px] overflow-y-auto' />\n          </Select.Content>\n        </Select.Portal>\n      </Select>\n    </div>\n  );\n};\n\nexport default LangSwitcher;\n\n    ",
+      "text": "import { Check } from 'lucide-solid';\nimport type { Component } from 'solid-js';\nimport { DEFAULT_LANG } from './LangSwitcher.constants';\nimport type { LanguageOption } from './LangSwitcher.types';\nimport { Select } from './Select';\n\ntype Props = {\n  langs?: LanguageOption[];\n  defaultLang?: string;\n  onChange?: (option: LanguageOption) => void;\n  placeholder?: string;\n};\n\n/**\n * LangSwitcher variable - Auto-generated expression\n * \n * ⚠️ WARNING: This expression is auto-generated and should not be modified.\n * Any manual changes will be overwritten during the next generation.\n * \n * @generated\n * @readonly\n * @author chlbri (bri_lvi@icloud.com)\n */\nexport const LangSwitcher: Component<Props> = ({\n  langs = [],\n  defaultLang,\n  onChange,\n  placeholder,\n}) => {\n  const selected =\n    langs.find(l => l.value === defaultLang) ?? langs[0] ?? DEFAULT_LANG;\n\n  return (\n    <div class='relative w-full'>\n      <Select<LanguageOption>\n        defaultValue={selected}\n        options={langs}\n        optionValue='value'\n        optionTextValue='label'\n        placeholder={placeholder}\n        onChange={option => {\n          if (option) onChange?.(option);\n        }}\n        itemComponent={itemProps => (\n          <Select.Item\n            item={itemProps.item}\n            class='flex items-center justify-between px-3 py-2 text-sm text-sidebar-foreground rounded-lg cursor-pointer outline-none select-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 data-focus:bg-sidebar-accent data-focus:text-sidebar-accent-foreground transition-all duration-150'\n          >\n            <div class='flex items-center gap-2.5'>\n              <span class='text-base leading-none select-none'>\n                {itemProps.item.rawValue.flag}\n              </span>\n              <Select.ItemLabel class='font-medium'>\n                {itemProps.item.rawValue.label}\n              </Select.ItemLabel>\n            </div>\n            <Select.ItemIndicator class='flex items-center justify-center text-sidebar-primary-foreground'>\n              <Check class='w-4 h-4' />\n            </Select.ItemIndicator>\n          </Select.Item>\n        )}\n      >\n        <Select.Trigger class='flex items-center justify-between w-full px-3.5 py-2.5 text-sm font-medium transition-all duration-300 border rounded-xl bg-sidebar-accent/20 hover:bg-sidebar-accent/50 border-sidebar-border hover:border-sidebar-foreground/20 focus:outline-none focus-visible:ring-1 focus-visible:ring-sidebar-ring disabled:cursor-not-allowed disabled:opacity-50 gap-2.5 text-sidebar-foreground/80 hover:text-sidebar-foreground group'>\n          <Select.Value<LanguageOption>>\n            {state => {\n              const selected = state.selectedOption();\n              return (\n                <div class='flex items-center gap-2.5'>\n                  <span class='text-base leading-none select-none'>\n                    {selected.flag}\n                  </span>\n                  <span class='font-semibold'>{selected.label}</span>\n                </div>\n              );\n            }}\n          </Select.Value>\n        </Select.Trigger>\n        <Select.Portal>\n          <Select.Content class='z-50 min-w-40 overflow-hidden rounded-xl border border-sidebar-border bg-sidebar/95 backdrop-blur-md p-1.5 text-sidebar-foreground shadow-2xl animate-in fade-in-80 slide-in-from-top-1 duration-200'>\n            <Select.Listbox class='space-y-0.5 outline-none max-h-[300px] overflow-y-auto' />\n          </Select.Content>\n        </Select.Portal>\n      </Select>\n    </div>\n  );\n};\n\nexport default LangSwitcher;\n\n    ",
       "exports": []
     },
     "ui/molecules/LangSwitcher.types": {
